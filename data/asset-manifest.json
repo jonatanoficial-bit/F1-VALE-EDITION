@@ -1,0 +1,2425 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "asset_id": "f1vge-p1-001",
+      "name": "hq-escritorio-design",
+      "asset_type": "hq",
+      "source_file": "21_fundo_design_office_4k.png",
+      "source_sha256": "409ece141d63d80e848f813e0685fe49496e39dbe54cd5c0e1a1cb06e32d96f6",
+      "output_file": "assets/media/hq-escritorio-design.webp",
+      "output_sha256": "fa74dbbe68988b33898c0491106af574b6b6f612fdb1bbd713b447e3e88ffa5b",
+      "source_dimensions": [
+        3840,
+        2160
+      ],
+      "output_dimensions": [
+        1920,
+        1080
+      ],
+      "source_bytes": 4652107,
+      "output_bytes": 62506,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-002",
+      "name": "hq-fabricacao",
+      "asset_type": "hq",
+      "source_file": "22_fundo_fabricacao_4k.png",
+      "source_sha256": "172cd6a962a0b1c7599a8046382c220187f7f20c4f651b17742e2b8909c4ce1e",
+      "output_file": "assets/media/hq-fabricacao.webp",
+      "output_sha256": "85037b3074eb4fbcdc4dd65ca61914d8a5f024391617ee998979c8f47d4150b9",
+      "source_dimensions": [
+        3840,
+        2160
+      ],
+      "output_dimensions": [
+        1920,
+        1080
+      ],
+      "source_bytes": 4785806,
+      "output_bytes": 66466,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-003",
+      "name": "hq-controle-qualidade",
+      "asset_type": "hq",
+      "source_file": "23_fundo_controle_qualidade_4k.png",
+      "source_sha256": "2cab7f81852fd7bc9f36f1c44ede65d347b83006bb1122cbb3efe67a6774d121",
+      "output_file": "assets/media/hq-controle-qualidade.webp",
+      "output_sha256": "e5b8de233726f00f07d0c56e11e66e1efb36dac69b186e556621cd6691140f8c",
+      "source_dimensions": [
+        3840,
+        2160
+      ],
+      "output_dimensions": [
+        1920,
+        1080
+      ],
+      "source_bytes": 3846972,
+      "output_bytes": 47818,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-004",
+      "name": "hq-unidade-potencia",
+      "asset_type": "hq",
+      "source_file": "24_fundo_unidade_potencia_4k.png",
+      "source_sha256": "80c63a7299e9f3aa7e6fc5774862b87bd58de2130f853fcf803ff06b7bbea086",
+      "output_file": "assets/media/hq-unidade-potencia.webp",
+      "output_sha256": "dd4a480596d3c3d17f3ce2698d896cda3f9259beffe92afd3112ee59aa8375d9",
+      "source_dimensions": [
+        3840,
+        2160
+      ],
+      "output_dimensions": [
+        1920,
+        1080
+      ],
+      "source_bytes": 4952539,
+      "output_bytes": 69342,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-005",
+      "name": "hq-componentes-confiabilidade",
+      "asset_type": "hq",
+      "source_file": "25_fundo_componentes_confiabilidade_4k.png",
+      "source_sha256": "9c49e60f2a7e2b4850bc7f4eaf4f13abc8153397c7a2c2e8ae7d5a336f45aacf",
+      "output_file": "assets/media/hq-componentes-confiabilidade.webp",
+      "output_sha256": "4872cd3f9f3dafd51d58539a2d583ebbc1d14a1955f4b1e9c007e68ee7b65558",
+      "source_dimensions": [
+        3840,
+        2160
+      ],
+      "output_dimensions": [
+        1920,
+        1080
+      ],
+      "source_bytes": 5134738,
+      "output_bytes": 66798,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-006",
+      "name": "gp-garagem-dupla",
+      "asset_type": "cinematic",
+      "source_file": "26_fundo_garagem_gp_4k.png",
+      "source_sha256": "dcabc1f5ef07d2038545339464ac1ee0df2f8fa68d6a8e29c66835e4262917b2",
+      "output_file": "assets/media/gp-garagem-dupla.webp",
+      "output_sha256": "b42a5acd277c245dff6a10c3e9b84e1b883ebb62485c65324139707210a619cc",
+      "source_dimensions": [
+        3840,
+        2160
+      ],
+      "output_dimensions": [
+        1920,
+        1080
+      ],
+      "source_bytes": 4086607,
+      "output_bytes": 51400,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-007",
+      "name": "gp-setup-carro",
+      "asset_type": "cinematic",
+      "source_file": "27_fundo_setup_carro_4k.png",
+      "source_sha256": "30cc755f0c1e397bfb96acf4efe98dc2e03f375aa51201919ad4c78ec906261c",
+      "output_file": "assets/media/gp-setup-carro.webp",
+      "output_sha256": "8fa8272a85ab1c9499b49a4cd5ca9356f6e3b8f9f9dc3dd6f8db483e2025b9bc",
+      "source_dimensions": [
+        3840,
+        2160
+      ],
+      "output_dimensions": [
+        1920,
+        1080
+      ],
+      "source_bytes": 4564023,
+      "output_bytes": 58976,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-008",
+      "name": "gp-telemetria",
+      "asset_type": "cinematic",
+      "source_file": "28_fundo_telemetria_4k.png",
+      "source_sha256": "d46df62d3e864ee0c265c5c7a7e5e85993065a892dda8776b67a3fab0b971dee",
+      "output_file": "assets/media/gp-telemetria.webp",
+      "output_sha256": "4dd3a2861ffb44725bee21e2f17e9299b1a2b4ff664edbaadabb624acfdd7447",
+      "source_dimensions": [
+        3840,
+        2160
+      ],
+      "output_dimensions": [
+        1920,
+        1080
+      ],
+      "source_bytes": 3028062,
+      "output_bytes": 38484,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-009",
+      "name": "gp-comparacao-pilotos",
+      "asset_type": "cinematic",
+      "source_file": "29_fundo_comparacao_dois_pilotos_4k.png",
+      "source_sha256": "5af98156bade14c81a4f28f64b228df32f391f65811d10f46a74d030216f5d5c",
+      "output_file": "assets/media/gp-comparacao-pilotos.webp",
+      "output_sha256": "0b7c16f85127775585dde723af2d6b6fddb44cf94ca92766d5884af84c300bf1",
+      "source_dimensions": [
+        3840,
+        2160
+      ],
+      "output_dimensions": [
+        1920,
+        1080
+      ],
+      "source_bytes": 3968549,
+      "output_bytes": 50868,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-010",
+      "name": "hq-treino-pit-stop",
+      "asset_type": "hq",
+      "source_file": "30_fundo_pit_stop_training_4k.png",
+      "source_sha256": "9e1304b1ed759db34830da6bcf63e749fb8c7b978732de6d4818d4e379b219b4",
+      "output_file": "assets/media/hq-treino-pit-stop.webp",
+      "output_sha256": "86d739716d3de7947f6c6ac641c2522c54b07795673602834ee5ce2793002316",
+      "source_dimensions": [
+        3840,
+        2160
+      ],
+      "output_dimensions": [
+        1920,
+        1080
+      ],
+      "source_bytes": 4891873,
+      "output_bytes": 64760,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-011",
+      "name": "menu-principal",
+      "asset_type": "cinematic",
+      "source_file": "75_wallpaper_4k_3840x2160.png",
+      "source_sha256": "1daf9d47957240327e64042f69347a3c7a60533c39d951961aaafc9b0d885a26",
+      "output_file": "assets/media/menu-principal.webp",
+      "output_sha256": "00ebbee2b274e57932af580cd09245deed04c951efa239fa734c495341e1add4",
+      "source_dimensions": [
+        3840,
+        2160
+      ],
+      "output_dimensions": [
+        1920,
+        1080
+      ],
+      "source_bytes": 5243301,
+      "output_bytes": 134912,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-012",
+      "name": "cinematica-001",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_26_01 (1).png",
+      "source_sha256": "bd0cdeca19d70bb2d4c573afc9a1acc278f802e58f595bfd5deb4b11471e5bc1",
+      "output_file": "assets/media/cinematica-001.webp",
+      "output_sha256": "e762bbb11adb180144b16bb0ceadf2c995a11ad6d657145e3ebed05e4c59658d",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1651508,
+      "output_bytes": 87690,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-013",
+      "name": "cinematica-002",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_26_01 (2).png",
+      "source_sha256": "3004ecad885198795787b7d1414086a648c8709b9f88926f76ce0f7063a1e63c",
+      "output_file": "assets/media/cinematica-002.webp",
+      "output_sha256": "6e6a691a5a0fd42124a98ebfbf69ec6aca1a2ecc747719edfed3fa282ead2f36",
+      "source_dimensions": [
+        1122,
+        1402
+      ],
+      "output_dimensions": [
+        864,
+        1080
+      ],
+      "source_bytes": 1875955,
+      "output_bytes": 70930,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-014",
+      "name": "cinematica-003",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_26_01 (3).png",
+      "source_sha256": "d77cc4f8ee4aee0762b2db4295d907a751fa4b79783601364be9db81acea0f2e",
+      "output_file": "assets/media/cinematica-003.webp",
+      "output_sha256": "633cd86d93143ce6729567b052403e8fea3617333062b2d5f3223d6703e731ea",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1413026,
+      "output_bytes": 49974,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-015",
+      "name": "cinematica-004",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_26_01 (4).png",
+      "source_sha256": "65f0c28d86b07ff317b371cbf0c96ef8e16875eccf8dc3f7922594fdc13aaaf4",
+      "output_file": "assets/media/cinematica-004.webp",
+      "output_sha256": "705394e4670c69e9257f12494556ca08891554aebfbadeb565631579412ba903",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 2060698,
+      "output_bytes": 150866,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-016",
+      "name": "cinematica-005",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_26_02 (10).png",
+      "source_sha256": "6e6e57f9e26f18144c5d3aab268b7a88ccb1f546497aedca24ebdbd66086ec22",
+      "output_file": "assets/media/cinematica-005.webp",
+      "output_sha256": "3e76f947575d0f1b2b89f22fcfa0e2b0a31247f8babb604ebffc2fcb3f857893",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1876684,
+      "output_bytes": 124700,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-017",
+      "name": "cinematica-006",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_26_02 (5).png",
+      "source_sha256": "ee33180e0e4750868a43a052a7c1648ecf2efaa51fc7126b6ecd901d171742ae",
+      "output_file": "assets/media/cinematica-006.webp",
+      "output_sha256": "189359661cda075febbe7c3f3b4f14cd877bd0180a2db2e341867ab5a12348bb",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1951137,
+      "output_bytes": 144934,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-018",
+      "name": "cinematica-007",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_26_02 (6).png",
+      "source_sha256": "29fa41466c753cf5e032fd5f2fb371d2e8f2eabc1481ce15b7a45c7e3db143e5",
+      "output_file": "assets/media/cinematica-007.webp",
+      "output_sha256": "54a9856033f0d6cf98ec04996fb54eb6854c1f0b958f56d760c257f95989bbc2",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 2088488,
+      "output_bytes": 139282,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-019",
+      "name": "cinematica-008",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_26_02 (7).png",
+      "source_sha256": "9140edb45cd028d3f8af5d98452721b79f68ba6c6b96ba97c318bbbceb9c3a0b",
+      "output_file": "assets/media/cinematica-008.webp",
+      "output_sha256": "394d965f45267f5db2db9ce80033925f10e1d28977a7288739ad36c354f9f0c4",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 2224567,
+      "output_bytes": 149778,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-020",
+      "name": "cinematica-009",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_26_02 (8).png",
+      "source_sha256": "3d105cbc0cfe476a4519aa816ff54d9ddf4f0b7a07ad18de10f90917e64ed604",
+      "output_file": "assets/media/cinematica-009.webp",
+      "output_sha256": "afc0e91e9acc16fcbcf6c1f681176dd04b64be5a1d519cd8414f612a24ea52e0",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1896930,
+      "output_bytes": 112756,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-021",
+      "name": "cinematica-010",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_26_02 (9).png",
+      "source_sha256": "609e4eaf6f41e09578b580178547344370226ea622f7bb641671af3d71c6391f",
+      "output_file": "assets/media/cinematica-010.webp",
+      "output_sha256": "c91e3bf2414037756fe99a31751e764b076b3bfe2a6fd83a6cbbfae32c892373",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1742580,
+      "output_bytes": 86856,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-022",
+      "name": "cinematica-011",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_26_19 (1).png",
+      "source_sha256": "c20d727c78a851f3ecb6f7780cb31ddcd2165190c1188bfad4a38cb4271c85a3",
+      "output_file": "assets/media/cinematica-011.webp",
+      "output_sha256": "500d12afcf9f0e37d6e8fec64a2dde11efa3a5d1518b42dce2666997778aee03",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 2066839,
+      "output_bytes": 126646,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-023",
+      "name": "cinematica-012",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_26_20 (2).png",
+      "source_sha256": "8a19de28448d35c3df57879f79d4c86b5180004ecba17761684e54f79309b8b1",
+      "output_file": "assets/media/cinematica-012.webp",
+      "output_sha256": "09474e530595455936cccb4d45bfaf453f46309d33d926698b659e2b609a5dc2",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1851662,
+      "output_bytes": 98760,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-024",
+      "name": "cinematica-013",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_26_20 (3).png",
+      "source_sha256": "f86ff8c2e08649681ab60f3dbd8ea6b2ed6d490e31dfc909a794a050e66e8040",
+      "output_file": "assets/media/cinematica-013.webp",
+      "output_sha256": "a0edd4097968b7c54b52e35b4d696cc41be40b4ed26511b2a7779606685aeb95",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1885800,
+      "output_bytes": 100984,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-025",
+      "name": "cinematica-014",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_26_20 (4).png",
+      "source_sha256": "3dbc00fb7398f479b7600660536626b9ee2f9ae5a47b819fc3e7c2c58935ed3b",
+      "output_file": "assets/media/cinematica-014.webp",
+      "output_sha256": "a1e803afa76858cb971b1022b496bbdf5dde83adb68f46c800a8cd338b45e8fe",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 2078948,
+      "output_bytes": 146264,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-026",
+      "name": "cinematica-015",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_26_20 (5).png",
+      "source_sha256": "b8e8fe710fb7f475814695329b96540cf92171c0a368592d1aea6b4c5ff93caa",
+      "output_file": "assets/media/cinematica-015.webp",
+      "output_sha256": "cec666a5080e5702e98624b3da86c4a46dc4a4f9e97bd0b0ebbf510ae63c4459",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 2097409,
+      "output_bytes": 145378,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-027",
+      "name": "cinematica-016",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_26_29 (1).png",
+      "source_sha256": "04d221656a3855f4c518baa5ce1943c26727dec09f0e88c03909f730a6579f9e",
+      "output_file": "assets/media/cinematica-016.webp",
+      "output_sha256": "41e0dbec1d11a11830442d741cbce39d60b19f1c5da680619c0f0f1826eecd52",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1847415,
+      "output_bytes": 98450,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-028",
+      "name": "cinematica-017",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_26_30 (2).png",
+      "source_sha256": "73517de609b051d36831bb9c1472b49605cc0b2c1207693f7a9f56a54292ee71",
+      "output_file": "assets/media/cinematica-017.webp",
+      "output_sha256": "0eeb5fc5e97e9f30cfbe48af4d51bfab114e6418817e573a6fa6b62a108e9fd8",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 2204408,
+      "output_bytes": 166390,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-029",
+      "name": "cinematica-018",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_26_39 (1).png",
+      "source_sha256": "5879d552008b8cdae75c7ebc766c10a0338c7c0505cfbbf11e623f0d3c2d045e",
+      "output_file": "assets/media/cinematica-018.webp",
+      "output_sha256": "97f4f27f29cbf5eb1126a1004b618aec213065b1691843743ec3d1bad326e1ac",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 2155148,
+      "output_bytes": 154732,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-030",
+      "name": "cinematica-019",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_26_39 (2).png",
+      "source_sha256": "952425abb5d88cba3758d307bef910be52789cd85d9687c11a314b82edde9669",
+      "output_file": "assets/media/cinematica-019.webp",
+      "output_sha256": "c94703eac835fd199083f250e6ac9929c091e00b26df8efed487b4e5bd6d4e8c",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 2026635,
+      "output_bytes": 149370,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-031",
+      "name": "cinematica-020",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_26_40 (3).png",
+      "source_sha256": "f142e0ff162533aa92e0d207449b144226519038ab38d6b24e056354449c6db4",
+      "output_file": "assets/media/cinematica-020.webp",
+      "output_sha256": "d07ef08660243861e02dc6e8954a3d874fef573e67f73cca7d4adeabfecb7d16",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 2287853,
+      "output_bytes": 195886,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-032",
+      "name": "cinematica-021",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_26_40 (4).png",
+      "source_sha256": "cc6de97945b2a1fed07ad6ec35bca6525b664d7b47f6cbf9729c99f71ff9cd29",
+      "output_file": "assets/media/cinematica-021.webp",
+      "output_sha256": "f0435a385df7064bb2c20f6591d27c4eba58305aff684fc8c47df5f7e0857782",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1831786,
+      "output_bytes": 92782,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-033",
+      "name": "cinematica-022",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_28_44 (1).png",
+      "source_sha256": "64dc8b4801f2ae81073e183097501bfcb6fde10b3cd77234d279fb12ea726b61",
+      "output_file": "assets/media/cinematica-022.webp",
+      "output_sha256": "accd4256e4643f4309541fe2859daf22622eb8d9afea220484bf29bbb625ee16",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 2082254,
+      "output_bytes": 129858,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-034",
+      "name": "cinematica-023",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_28_46 (2).png",
+      "source_sha256": "a10f2321ef6b9720dc53aac22f23cb928f1e504e2a218dade556b9e339afe7f7",
+      "output_file": "assets/media/cinematica-023.webp",
+      "output_sha256": "4cf60b5bee6230ca4f210a7ce78873814f979e22a1b758ed933e4eee12cd8719",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1952723,
+      "output_bytes": 125106,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-035",
+      "name": "cinematica-024",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_28_46 (3).png",
+      "source_sha256": "c13a43676dc3eb6a111c7c638a267d5e2684299d90a472b4208387107ce9b2f8",
+      "output_file": "assets/media/cinematica-024.webp",
+      "output_sha256": "5708ebc113a3bc1a2a4d9558672bef4333cb22e1b868d730eb394e62680f65d5",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 2003794,
+      "output_bytes": 105304,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-036",
+      "name": "cinematica-025",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_28_46 (4).png",
+      "source_sha256": "f8013ae06f907b3d8d1bfd37bd5e5174d46b63a9a151bc525877558ed5ecba4c",
+      "output_file": "assets/media/cinematica-025.webp",
+      "output_sha256": "b3ccb20831d3ba005e70149ac5776019827e0252295bd3c384c2a540fd9618e1",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 2350816,
+      "output_bytes": 168298,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-037",
+      "name": "cinematica-026",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_28_47 (5).png",
+      "source_sha256": "5eb50f1d563ed82f5c74d085d410ad25f3726e413746a3a0bc74456d5dec9ad6",
+      "output_file": "assets/media/cinematica-026.webp",
+      "output_sha256": "adb62a1cdb272889b503fa80769ed6ac5faac2766526c1ad417717be42a8672b",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1209076,
+      "output_bytes": 18064,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-038",
+      "name": "cinematica-027",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_28_47 (6).png",
+      "source_sha256": "b81c623d5d59cec183d0ae80f0e5683bca4a539ab81b5cf6957b590fc9eebd56",
+      "output_file": "assets/media/cinematica-027.webp",
+      "output_sha256": "f349b7edc602bfd80e37d2ed137e82309ffd2999532fb14fa943f5e1008cf52d",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1873656,
+      "output_bytes": 40232,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-039",
+      "name": "cinematica-028",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_28_47 (7).png",
+      "source_sha256": "806b68f22085c8316bbc6419e4710e68be5fc14c47d11035a07f9a29073618c3",
+      "output_file": "assets/media/cinematica-028.webp",
+      "output_sha256": "853a7e4405659c19f5e9f6b4535d2446d2ffdfa29f49e0aa687c7a87f7a39598",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 2042974,
+      "output_bytes": 143904,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-040",
+      "name": "cinematica-029",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_28_51 (8).png",
+      "source_sha256": "e98b6b165df80c117477ed256915c267a872d85593ae45ad95a31aed5674a5a7",
+      "output_file": "assets/media/cinematica-029.webp",
+      "output_sha256": "d8a0a915bf4901748be3ebdeac38cd6bf8a8cbb4950d8422f2751f9644a6bb1d",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 2071026,
+      "output_bytes": 122890,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-041",
+      "name": "cinematica-030",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_28_52 (9).png",
+      "source_sha256": "ad7fef16950109959f59254cf9ab1d4fee039eba39a692f9b2206322cc429461",
+      "output_file": "assets/media/cinematica-030.webp",
+      "output_sha256": "7d6098f8d6faa221cd944707e7c31652e7f21a6eb21cded51c342b5b68c926df",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1914614,
+      "output_bytes": 23522,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-042",
+      "name": "cinematica-031",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_28_53 (10).png",
+      "source_sha256": "c20b1f11c0e2205cba8a7c71ce062cbfc7ed53c8cdb241b869d557b847e5667b",
+      "output_file": "assets/media/cinematica-031.webp",
+      "output_sha256": "773fd42922cd5fdbda204a746aeddf2018cf60bb2d36da8281ef036b77ce3cf8",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1413831,
+      "output_bytes": 33912,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-043",
+      "name": "cinematica-032",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_29_51 (1).png",
+      "source_sha256": "9fe26515fe6f28e2b647883bc76c3cf3daff7d01539b1357ea36db9196061938",
+      "output_file": "assets/media/cinematica-032.webp",
+      "output_sha256": "1175fba0499dd798f70a26bfade2c6865e2a858160c007bf399b12404e88b4fe",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1391361,
+      "output_bytes": 40120,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-044",
+      "name": "cinematica-033",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_29_52 (2).png",
+      "source_sha256": "276aeb77844e235a6fbb720a1d3cae8fba34b4882c468ff723e024f83b01c344",
+      "output_file": "assets/media/cinematica-033.webp",
+      "output_sha256": "51d8be36c47b41b265c10363a19a36133f8c3dafe912c16d104436f371f1b149",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1438478,
+      "output_bytes": 37318,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-045",
+      "name": "cinematica-034",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_29_52 (3).png",
+      "source_sha256": "047e0ab7b385362c74bae2a35c8d2ccb1dcd517738544c24eac84bce2fee6cb3",
+      "output_file": "assets/media/cinematica-034.webp",
+      "output_sha256": "4028a51312f084057b84d67560f09c6b50629f2b1fa1fbde97382adb080a1cb0",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1398186,
+      "output_bytes": 42208,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-046",
+      "name": "cinematica-035",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_29_52 (4).png",
+      "source_sha256": "5f75e04c337eecaaec7edac667b6249fd599d0dac7b6a3774fae791a846712c8",
+      "output_file": "assets/media/cinematica-035.webp",
+      "output_sha256": "da692aabaa4a7a2b1a62a93b30bc66379b1a91c6abe19cd9a29406891a4fe5c7",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1356318,
+      "output_bytes": 58554,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-047",
+      "name": "cinematica-036",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_29_52 (5).png",
+      "source_sha256": "001b9b72e24e663f755c2a477a0e93764c4d3a5350a476e527e38ff9cfa52cc2",
+      "output_file": "assets/media/cinematica-036.webp",
+      "output_sha256": "5ca559a35068accaab8ff73cd0103488d1704dab451c7fbda3f4f6be30e53bb6",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1439444,
+      "output_bytes": 39730,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-048",
+      "name": "cinematica-037",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_29_52 (6).png",
+      "source_sha256": "81ec7f7de1433523f8bf229ce56a4aa33db0485f16e685b777e1fa672d22a68b",
+      "output_file": "assets/media/cinematica-037.webp",
+      "output_sha256": "31a0b9f36fcfafd9bf26d6b651344c26dc085f50a4ce8c704340450ab7bccd10",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1507001,
+      "output_bytes": 43944,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-049",
+      "name": "cinematica-038",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_29_52 (7).png",
+      "source_sha256": "a829be829c77c0be29242808f0661b34a90c75e9da611d1feb9d991d0ba444d9",
+      "output_file": "assets/media/cinematica-038.webp",
+      "output_sha256": "952fc2d82b7e2ae2b46a403a56643a4f16ed7b3592247ad029c77cf9ca4f4968",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1706640,
+      "output_bytes": 88048,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-050",
+      "name": "cinematica-039",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_29_53 (8).png",
+      "source_sha256": "90db6fbf8b6735a415d24adf2e74e07734e118d407ab3d33776e6518a4f6c8d9",
+      "output_file": "assets/media/cinematica-039.webp",
+      "output_sha256": "248463a39b91b12dff3d8cfb908f58087b1b78ea270d01787c8ca95b07b594ce",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1356581,
+      "output_bytes": 43340,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-051",
+      "name": "cinematica-040",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_29_53 (9).png",
+      "source_sha256": "4f9149a9bba195521bae5e497427c683db0ae3dc2ba9886059cee1de22ccb2e5",
+      "output_file": "assets/media/cinematica-040.webp",
+      "output_sha256": "69b089b0a0e2585f83196124221efbd5777dc8ee51592241ba85a161e06a7994",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1652951,
+      "output_bytes": 60872,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-052",
+      "name": "cinematica-041",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_29_55 (10).png",
+      "source_sha256": "0233f41daa38868cbebe163506b2dadf582b30ba17a0b1fdcaac569f24ffbc36",
+      "output_file": "assets/media/cinematica-041.webp",
+      "output_sha256": "d1c3c3d403b9702931f214143bac77a61a3a13ac74cc3bce9395b1a3e29e7f90",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1298132,
+      "output_bytes": 23476,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-053",
+      "name": "cinematica-042",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_01 (1).png",
+      "source_sha256": "acb528664b2666aae59058a836d9fd6cd3b08ada9827e64ef70d2c60c3951dab",
+      "output_file": "assets/media/cinematica-042.webp",
+      "output_sha256": "f7ad891a625b91314b2f80e39c7049d706b75a868fab58b82a489bd944e0d930",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1550106,
+      "output_bytes": 36074,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-054",
+      "name": "cinematica-043",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_02 (2).png",
+      "source_sha256": "a71f25c3353ef1b3e16b211ab5c7be7e967fd10c66428db64344196aced2d65b",
+      "output_file": "assets/media/cinematica-043.webp",
+      "output_sha256": "ebf09c63fb4689b7f58f1526c381c0357df654d7392bfcf3d84e4e1b2acd8577",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 2320887,
+      "output_bytes": 157660,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-055",
+      "name": "cinematica-044",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_02 (3).png",
+      "source_sha256": "1d1aab20d5827223a51db18be185f2ed355884808c895624a37b76181114ff4b",
+      "output_file": "assets/media/cinematica-044.webp",
+      "output_sha256": "6bc9dbb876cf1bfc3b44f713c79bad381a8c1803724b8149e7bafe77e8a658e6",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1794208,
+      "output_bytes": 96776,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-056",
+      "name": "cinematica-045",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_02 (4).png",
+      "source_sha256": "fa93b5778bf38d4598cdd77c6b8a75b53601270458b7396969151b801a387225",
+      "output_file": "assets/media/cinematica-045.webp",
+      "output_sha256": "f45e248b80247cc021744df798cc0c697a35af9693644eec24b966ce97a5814d",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1663428,
+      "output_bytes": 50850,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-057",
+      "name": "cinematica-046",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_02 (5).png",
+      "source_sha256": "20c881711f284eaf9642486fcd00cbd49689654a4310f05027a1a4f430b67b47",
+      "output_file": "assets/media/cinematica-046.webp",
+      "output_sha256": "f1769421e752f45068597d9f1821d044248efd8db5d802883cdda59cc86e8ebf",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1881595,
+      "output_bytes": 71250,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-058",
+      "name": "cinematica-047",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_02 (6).png",
+      "source_sha256": "526ef1f34a1076cd93ac9001b951861e2260721bba90a33524b01a8845fddf96",
+      "output_file": "assets/media/cinematica-047.webp",
+      "output_sha256": "8c98a9f8fb8584239130ea3f09812e643da209024cab1d7d71e6feb104f8d1cb",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 2522555,
+      "output_bytes": 255238,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-059",
+      "name": "cinematica-048",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_03 (7).png",
+      "source_sha256": "ea8911bf05c41de67ebea527f3702808728f2cf507de73908b88d33d19261057",
+      "output_file": "assets/media/cinematica-048.webp",
+      "output_sha256": "250b1d3f567372e28d6bc0c89f715d2f3e8c90e2ccf0d123086aed30fdbc0a6a",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1924197,
+      "output_bytes": 123092,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-060",
+      "name": "cinematica-049",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_03 (8).png",
+      "source_sha256": "3aed2e1937dd409aeae9852a6392badf98b06926807e110701ea95cf11e3a28a",
+      "output_file": "assets/media/cinematica-049.webp",
+      "output_sha256": "2d18d51666dea5c38ceb9ff1877611cf8f888e2d7075a251b52d464338f46201",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1769007,
+      "output_bytes": 106344,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-061",
+      "name": "cinematica-050",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_04 (10).png",
+      "source_sha256": "32151c90a55ba1030e837f5dde1bc11c9c74ea92f9cc91fe9ddf7f7f7c4b9364",
+      "output_file": "assets/media/cinematica-050.webp",
+      "output_sha256": "ec8f0e2e0c11391b7ed4539daebe01169801ab37968c04b8b5f192d038e0ba12",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 2237351,
+      "output_bytes": 149698,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-062",
+      "name": "cinematica-051",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_04 (9).png",
+      "source_sha256": "c74c4c638a52e9529407aa90f5b8ab7012a005fddadca1376bf228fd117090fb",
+      "output_file": "assets/media/cinematica-051.webp",
+      "output_sha256": "19b44811905a8af9e5af596cb465e6e0c0257e6b90584785dbe90f496c2c5ec0",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1928084,
+      "output_bytes": 102920,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-063",
+      "name": "cinematica-052",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_16 (1).png",
+      "source_sha256": "d1e475dd513c359a763293bc1a280eb1ebdeb1d2f00cf4bdb7a4a360be62100a",
+      "output_file": "assets/media/cinematica-052.webp",
+      "output_sha256": "2988bbe9a77ab07947de70e19d0ecddd32debb96d680037a760fba398b84d308",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1699273,
+      "output_bytes": 54908,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-064",
+      "name": "cinematica-053",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_17 (2).png",
+      "source_sha256": "e95f2a123717b058d89d8fb2284b3c6fb1e01f8461afb1947fc47d8f9e996c49",
+      "output_file": "assets/media/cinematica-053.webp",
+      "output_sha256": "4034c5e77d94ce588a0ac01c4da97b756ae95df71277e406d37b9159b6245e19",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 2112936,
+      "output_bytes": 130946,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-065",
+      "name": "cinematica-054",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_17 (3).png",
+      "source_sha256": "6516ba8ccec97ab9c86c9a49e6c04e3ea3725ae56fe47ac3a3d4d38b7db3fbb6",
+      "output_file": "assets/media/cinematica-054.webp",
+      "output_sha256": "48ed1a532d3dc6bceac8216d859cb5bacb364cc94fcd61b5e303ef9189172503",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 2011839,
+      "output_bytes": 134612,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-066",
+      "name": "cinematica-055",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_17 (4).png",
+      "source_sha256": "6b50665230fe45d5dc41becbce9112ab2a1b91f5ed7567462483911bd1a6d87f",
+      "output_file": "assets/media/cinematica-055.webp",
+      "output_sha256": "aea4226f61d2448a4b1981556f8276b4bf09593ce69b769c3be176fe15ba918d",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1682505,
+      "output_bytes": 67944,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-067",
+      "name": "cinematica-056",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_17 (5).png",
+      "source_sha256": "89cf369b5403c292cb37956dc37a46d1546dfd2480acd1c2a46586f3c9461b2e",
+      "output_file": "assets/media/cinematica-056.webp",
+      "output_sha256": "a29be13ee4fa33579aa704e299e57395f706942e6bbca88b77282a1db4915b5f",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1575772,
+      "output_bytes": 60474,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-068",
+      "name": "cinematica-057",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_17 (6).png",
+      "source_sha256": "ad471c99a22ac46c749d30de033e569dcee9c0ada395960549036bc2969ef339",
+      "output_file": "assets/media/cinematica-057.webp",
+      "output_sha256": "c33c56fbbca6aedb2fe840ba7e9bf147dd64ffa4ee1723672791204bb2a1a9cd",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1773470,
+      "output_bytes": 86440,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-069",
+      "name": "cinematica-058",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_18 (7).png",
+      "source_sha256": "20f46daca08c333e44b4dea1fa531ec1feae21d082a11a2849b8430c6466371b",
+      "output_file": "assets/media/cinematica-058.webp",
+      "output_sha256": "65ec0ac9a2ff9a1014b75a7079c558e804da72e3c3a5b1986c4d7e220514c322",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1741568,
+      "output_bytes": 70480,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-070",
+      "name": "cinematica-059",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_18 (8).png",
+      "source_sha256": "3b7bec3af7679d996fbb8aa9cc356527728c3165d00373192568bd7f26f02ef6",
+      "output_file": "assets/media/cinematica-059.webp",
+      "output_sha256": "a8d491efbd0044101478853383238b4cb766438559bbb96e0aecfab54025e756",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1676595,
+      "output_bytes": 88346,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-071",
+      "name": "cinematica-060",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_19 (9).png",
+      "source_sha256": "47e374f18e2aa2304533847512ad3fd3f8913c658ecac2e5c7402d0aea8d31c1",
+      "output_file": "assets/media/cinematica-060.webp",
+      "output_sha256": "c732d8ffccbece88305eb25c55aea16ef181e0831a13fd356db0b4b0fcd14e3e",
+      "source_dimensions": [
+        2172,
+        724
+      ],
+      "output_dimensions": [
+        1920,
+        640
+      ],
+      "source_bytes": 2132137,
+      "output_bytes": 135982,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-072",
+      "name": "cinematica-061",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_21 (10).png",
+      "source_sha256": "d10fffe625afc571af0d2a00f946ee601a858d188d2b5d94af3704b22de667b1",
+      "output_file": "assets/media/cinematica-061.webp",
+      "output_sha256": "6ce32a58b67eb7267456a57f3b1e333499919c25c20361872d0eee2ec8e144e8",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1961964,
+      "output_bytes": 107040,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-073",
+      "name": "cinematica-062",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_37 (1).png",
+      "source_sha256": "6f1db54acc3363cd1e43eff6d89fb39cc0844e9b7d6888abe4b6adb18afa085b",
+      "output_file": "assets/media/cinematica-062.webp",
+      "output_sha256": "689afe8df3bb534b1957e7a1f3b059de614c29989738e519c4381311ea15a9b8",
+      "source_dimensions": [
+        1024,
+        1536
+      ],
+      "output_dimensions": [
+        720,
+        1080
+      ],
+      "source_bytes": 2015609,
+      "output_bytes": 66152,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-074",
+      "name": "cinematica-063",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_37 (2).png",
+      "source_sha256": "1ed656eb78e925c7a855cca625338ab4ca64155dcbe5a61be5adbd5ce1568a9b",
+      "output_file": "assets/media/cinematica-063.webp",
+      "output_sha256": "c019630fda334a3cc1c27f41c831791145d8ad01a9e10165c651a8049e8dc805",
+      "source_dimensions": [
+        1122,
+        1402
+      ],
+      "output_dimensions": [
+        864,
+        1080
+      ],
+      "source_bytes": 1884365,
+      "output_bytes": 79662,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-075",
+      "name": "cinematica-064",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_38 (3).png",
+      "source_sha256": "32633bbfa7a3d0c171b0364afaac746c6ca05afce6370afa0f32fbd2e091b4bf",
+      "output_file": "assets/media/cinematica-064.webp",
+      "output_sha256": "66866f615e8846dd0678fd89755972ddf765bc1e536fc208e597ba94c435a333",
+      "source_dimensions": [
+        941,
+        1672
+      ],
+      "output_dimensions": [
+        608,
+        1080
+      ],
+      "source_bytes": 2138447,
+      "output_bytes": 65956,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-076",
+      "name": "cinematica-065",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_39 (4).png",
+      "source_sha256": "560f3d95595f88c50877a960634c3ea663fc3f1e4bc47101e331a57ede37ca7e",
+      "output_file": "assets/media/cinematica-065.webp",
+      "output_sha256": "922cf3108c925ecfad53995c749b890f1f66b023cc78ab51639c503f36898202",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 2078376,
+      "output_bytes": 92154,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-077",
+      "name": "cinematica-066",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_49 (1).png",
+      "source_sha256": "eb7917495c515e29c73129b61d416b8767815ec172d76c26b9cb51aba8dc7478",
+      "output_file": "assets/media/cinematica-066.webp",
+      "output_sha256": "c0378c5c6d105fb22bbe5935cee8d5b3d24d0d3de94f541ac5634217a803533b",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 2230033,
+      "output_bytes": 162034,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-078",
+      "name": "cinematica-067",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_59 (2).png",
+      "source_sha256": "e19a76e17e2fc6326f5eb54d7f7e05a4f58a0deb3333d16be37f43b4f6aaf293",
+      "output_file": "assets/media/cinematica-067.webp",
+      "output_sha256": "f8b008c406edf7d705951ce286cf820567a7fef0b8ec7d484914151c0b97c45a",
+      "source_dimensions": [
+        1122,
+        1402
+      ],
+      "output_dimensions": [
+        864,
+        1080
+      ],
+      "source_bytes": 1720932,
+      "output_bytes": 16578,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-079",
+      "name": "cinematica-068",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_30_59 (3).png",
+      "source_sha256": "0b15dc192b17de735870bb9476b94a0c63cd392e49c562577a38be8bda76c2d0",
+      "output_file": "assets/media/cinematica-068.webp",
+      "output_sha256": "0e73d46077c7e3195d5bf4aa18cc5df7cfd60454dab05d693544a5318b5aac64",
+      "source_dimensions": [
+        1122,
+        1402
+      ],
+      "output_dimensions": [
+        864,
+        1080
+      ],
+      "source_bytes": 1270373,
+      "output_bytes": 24346,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-080",
+      "name": "cinematica-069",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_31_01 (4).png",
+      "source_sha256": "efe70c2a3616fad5a6319ae5cf9d1f0d5ab5f2c3e349f51a9aa0df7c06270e44",
+      "output_file": "assets/media/cinematica-069.webp",
+      "output_sha256": "018b52b5f2761aaaa4e7bba3499bfe8b040001f521a63ab1f7e1d99f6003c82b",
+      "source_dimensions": [
+        1122,
+        1402
+      ],
+      "output_dimensions": [
+        864,
+        1080
+      ],
+      "source_bytes": 1853956,
+      "output_bytes": 40792,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-081",
+      "name": "cinematica-070",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_31_02 (5).png",
+      "source_sha256": "27c4802516469666033b5ba7a7514a84b8b49af6a9e8234eb1dad5b89ad00e07",
+      "output_file": "assets/media/cinematica-070.webp",
+      "output_sha256": "2915934e0e9fb20cb0e8b8d23795cf666256430181426c3731bcbf9ea54425d6",
+      "source_dimensions": [
+        1122,
+        1402
+      ],
+      "output_dimensions": [
+        864,
+        1080
+      ],
+      "source_bytes": 1601308,
+      "output_bytes": 32946,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-082",
+      "name": "cinematica-071",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_31_02 (6).png",
+      "source_sha256": "32f8432d7ecd0729b0335720d7f3da324c4ee888bfa9c95fcca622e24efcf1b8",
+      "output_file": "assets/media/cinematica-071.webp",
+      "output_sha256": "f0da7ce3962c86fb566c44738a15c21d48ddb8a2caddcf2c90168cc20c67d007",
+      "source_dimensions": [
+        1122,
+        1402
+      ],
+      "output_dimensions": [
+        864,
+        1080
+      ],
+      "source_bytes": 1725204,
+      "output_bytes": 33600,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-083",
+      "name": "cinematica-072",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_31_03 (7).png",
+      "source_sha256": "320a3dff4ed082458c25bfa48c6dc15ee0b7abfa07ddf452ad5a183f71202232",
+      "output_file": "assets/media/cinematica-072.webp",
+      "output_sha256": "f8bf082749aea56d56b4fe5763091b251902a936d087bd3b4e51fc1308166fdf",
+      "source_dimensions": [
+        1122,
+        1402
+      ],
+      "output_dimensions": [
+        864,
+        1080
+      ],
+      "source_bytes": 1517214,
+      "output_bytes": 44796,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-084",
+      "name": "cinematica-073",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_31_03 (8).png",
+      "source_sha256": "610904c6d7b765def0ba46f9d99c4a07586cdaa85966d709f0a52c382ac589e6",
+      "output_file": "assets/media/cinematica-073.webp",
+      "output_sha256": "0b181b8b2e364bea40d8c7bcba4718265410bbe46b8302fe3fdc8c43a1328e23",
+      "source_dimensions": [
+        1122,
+        1402
+      ],
+      "output_dimensions": [
+        864,
+        1080
+      ],
+      "source_bytes": 1599880,
+      "output_bytes": 28284,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-085",
+      "name": "cinematica-074",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_31_05 (1).png",
+      "source_sha256": "b9953deaea54e22294034b8347c2a567494ae8d773ea06b58ea06e33c2a62624",
+      "output_file": "assets/media/cinematica-074.webp",
+      "output_sha256": "3976588d3853e7715895c6bc160768fb9ff0b509eb34c8ce1bc2536786ecbfbe",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 2213257,
+      "output_bytes": 162824,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-086",
+      "name": "cinematica-075",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_31_06 (2).png",
+      "source_sha256": "593d0e7213165acded934e625a135d5f1d2f19a38a8921da9a3a230701c2172f",
+      "output_file": "assets/media/cinematica-075.webp",
+      "output_sha256": "54ef7cdd9d77866250323208d2a506f7e7b1fda106b48ddc2bfda24c2da764e6",
+      "source_dimensions": [
+        1448,
+        1086
+      ],
+      "output_dimensions": [
+        1440,
+        1080
+      ],
+      "source_bytes": 963387,
+      "output_bytes": 21438,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-087",
+      "name": "cinematica-076",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_31_06 (3).png",
+      "source_sha256": "7366b1760a27ed6c3b05a614312b47f5216be0a392821f93b7b32f783beabc91",
+      "output_file": "assets/media/cinematica-076.webp",
+      "output_sha256": "fadc5c83ab1044a8b34a1f14494ccf8cdad1a7936cfa28f1fe8a3697b305c5d2",
+      "source_dimensions": [
+        1448,
+        1086
+      ],
+      "output_dimensions": [
+        1440,
+        1080
+      ],
+      "source_bytes": 1609265,
+      "output_bytes": 21892,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-088",
+      "name": "cinematica-077",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_31_06 (9).png",
+      "source_sha256": "656422e748200dd9aa1e73c1d96245e1d6e82c1b0865cf0806a1b6618f57e451",
+      "output_file": "assets/media/cinematica-077.webp",
+      "output_sha256": "c297dd634dab8a48db0e0ca00fcd9f60382c2e7bad01d8faf137fd6fab950668",
+      "source_dimensions": [
+        1122,
+        1402
+      ],
+      "output_dimensions": [
+        864,
+        1080
+      ],
+      "source_bytes": 1667707,
+      "output_bytes": 45188,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-089",
+      "name": "cinematica-078",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_31_07 (4).png",
+      "source_sha256": "a331540293dfdd3d7750b3d8fb32f840f7dbe2ff810ac69b1cc0bda10f812a54",
+      "output_file": "assets/media/cinematica-078.webp",
+      "output_sha256": "e3d0a37c38d808666f5cb9d873be643c77d078a6fb4458289bc639a7afd9dccc",
+      "source_dimensions": [
+        941,
+        1672
+      ],
+      "output_dimensions": [
+        608,
+        1080
+      ],
+      "source_bytes": 1376985,
+      "output_bytes": 14860,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-090",
+      "name": "cinematica-079",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_31_07 (5).png",
+      "source_sha256": "62714aa22cea99561bebb706a98d0383d99fff920a66811c5639b257bbb3ce7c",
+      "output_file": "assets/media/cinematica-079.webp",
+      "output_sha256": "d5decef56391fc3907b17c3af3264c565ffac431c53ef58a2c7e730f4364dc8b",
+      "source_dimensions": [
+        1448,
+        1086
+      ],
+      "output_dimensions": [
+        1440,
+        1080
+      ],
+      "source_bytes": 1421991,
+      "output_bytes": 37296,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-091",
+      "name": "cinematica-080",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_31_08 (6).png",
+      "source_sha256": "95889318ebd6bb07cdcf7c8719d1dace50dd3fb42f6eb4fed7448f68a9956ae3",
+      "output_file": "assets/media/cinematica-080.webp",
+      "output_sha256": "fcc76da723536e24c6cc420269b32bce720fd73f5e82b92faf73637eaba5785e",
+      "source_dimensions": [
+        1448,
+        1086
+      ],
+      "output_dimensions": [
+        1440,
+        1080
+      ],
+      "source_bytes": 1894564,
+      "output_bytes": 119252,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-092",
+      "name": "cinematica-081",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_31_08 (7).png",
+      "source_sha256": "f88e17c9cbe83ee88f713c4db8a8ca1b5faaacefc54eeb917602937ef93ca351",
+      "output_file": "assets/media/cinematica-081.webp",
+      "output_sha256": "6407201c83083873f1021de0b6f4d31b4ac4ef99519944390abb0c35d8f0d723",
+      "source_dimensions": [
+        1448,
+        1086
+      ],
+      "output_dimensions": [
+        1440,
+        1080
+      ],
+      "source_bytes": 2258485,
+      "output_bytes": 143164,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-093",
+      "name": "cinematica-082",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_31_09 (8).png",
+      "source_sha256": "948f1ac2bce24dacb7c6474722104da40a274abb87536cad5a2ece4eaa009c02",
+      "output_file": "assets/media/cinematica-082.webp",
+      "output_sha256": "5d352bacf2e38f1b6c98598813ef3751696d4ee0cd30fe2f149edfa558936607",
+      "source_dimensions": [
+        1448,
+        1086
+      ],
+      "output_dimensions": [
+        1440,
+        1080
+      ],
+      "source_bytes": 1644989,
+      "output_bytes": 66390,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-094",
+      "name": "cinematica-083",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_31_10 (9).png",
+      "source_sha256": "668d4fd56c6960e80ca4424b3d42e66ed9f4ea7aeee463632e9a94f81ceab20d",
+      "output_file": "assets/media/cinematica-083.webp",
+      "output_sha256": "d442d988924f1e78559be3e60cf75bd742a9752f30d79b342b096a2386216df2",
+      "source_dimensions": [
+        1448,
+        1086
+      ],
+      "output_dimensions": [
+        1440,
+        1080
+      ],
+      "source_bytes": 1301464,
+      "output_bytes": 16402,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-095",
+      "name": "cinematica-084",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_31_11 (10).png",
+      "source_sha256": "7fc1450ff0188131556f4f5dc515e0074df1ddb41320f9fc2f712d56802d0d6e",
+      "output_file": "assets/media/cinematica-084.webp",
+      "output_sha256": "1165b066a26eb7cd2db59daeda054e61ded89a344b300c8a27e5356b6814b07f",
+      "source_dimensions": [
+        1448,
+        1086
+      ],
+      "output_dimensions": [
+        1440,
+        1080
+      ],
+      "source_bytes": 1428808,
+      "output_bytes": 40916,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-096",
+      "name": "cinematica-085",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_31_27 (1).png",
+      "source_sha256": "012986f89eb9a0c0a1fef84be93ee2f708e4957da6dac8ac6ee218065362b1e5",
+      "output_file": "assets/media/cinematica-085.webp",
+      "output_sha256": "48d4b908186163272d784344996bc6e506c9f69d5d50680a3d7ee2b773dde05b",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1603877,
+      "output_bytes": 106168,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-097",
+      "name": "cinematica-086",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_31_27 (2).png",
+      "source_sha256": "c959c4a8fd3cdfc459928e709b54d7b410b33a96f41767fe31beea526b047733",
+      "output_file": "assets/media/cinematica-086.webp",
+      "output_sha256": "0adc4ca4a63854f028f4c45f163212240f422b151f92db216721f507969e6daf",
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "output_dimensions": [
+        1536,
+        1024
+      ],
+      "source_bytes": 1917273,
+      "output_bytes": 97488,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-098",
+      "name": "cinematica-087",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_31_28 (3).png",
+      "source_sha256": "e3408639f5483f328503a24eb66d899ac6973405ab0e743763109206823170ff",
+      "output_file": "assets/media/cinematica-087.webp",
+      "output_sha256": "f559f31cc8b10c3f41b0fb4a19c16d07297b26fc689d98aeecf7b2c1393d35a6",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 1496942,
+      "output_bytes": 89216,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-099",
+      "name": "capa-logo-horizontal",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_49_20.png",
+      "source_sha256": "ce3152285af8ce5c76036cab95a55b1a97817e7c9d5cf3a251041b59ca85bda4",
+      "output_file": "assets/media/capa-logo-horizontal.webp",
+      "output_sha256": "288f63e94cee07d25edef570971845c6847456d787454e66800f3f8457393504",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 2479490,
+      "output_bytes": 1692986,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-100",
+      "name": "capa-logo-horizontal-alt",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_49_29.png",
+      "source_sha256": "ce3152285af8ce5c76036cab95a55b1a97817e7c9d5cf3a251041b59ca85bda4",
+      "output_file": "assets/media/capa-logo-horizontal-alt.webp",
+      "output_sha256": "288f63e94cee07d25edef570971845c6847456d787454e66800f3f8457393504",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "output_dimensions": [
+        1672,
+        941
+      ],
+      "source_bytes": 2479490,
+      "output_bytes": 1692986,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-101",
+      "name": "capa-poster-vertical",
+      "asset_type": "cinematic",
+      "source_file": "ChatGPT Image 2 de set. de 2026, 12_49_35.png",
+      "source_sha256": "3923f2fc1b53592f47d5b61542367af055ab92d3dabfad88d92bbbe91a470d3f",
+      "output_file": "assets/media/capa-poster-vertical.webp",
+      "output_sha256": "933694f2b2bee23a40eaa5d6006ec4219eeb1352ac4be770b35bf95988eececa",
+      "source_dimensions": [
+        1086,
+        1448
+      ],
+      "output_dimensions": [
+        810,
+        1080
+      ],
+      "source_bytes": 2489068,
+      "output_bytes": 153072,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-102",
+      "name": "ui-empty-state-illustration",
+      "asset_type": "ui",
+      "source_file": "ui_empty_state_illustration.png",
+      "source_sha256": "58399cb3ee6523fe567015ca15c619a093e0b8dada10ae0ed6e5dab9aa1f4b6b",
+      "output_file": "assets/media/ui-empty-state-illustration.webp",
+      "output_sha256": "7ea9cb89ade56f1fe4561a24b991f0d4e3f10206dabc9fce44d4fcb2260c5357",
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "output_dimensions": [
+        1920,
+        1080
+      ],
+      "source_bytes": 757046,
+      "output_bytes": 28898,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-103",
+      "name": "ui-glow-dourado",
+      "asset_type": "ui",
+      "source_file": "ui_glow_dourado.png",
+      "source_sha256": "d6896024a84d8a4e688190c91168758d9d0f2a3227b8df0f86a5cc8350f3d3a9",
+      "output_file": "assets/media/ui-glow-dourado.webp",
+      "output_sha256": "84ec8a1f83db5a2ec34a988dde3365f7c0af8ffb8b3902d74fc7158954075315",
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "output_dimensions": [
+        1536,
+        1024
+      ],
+      "source_bytes": 715198,
+      "output_bytes": 38788,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-104",
+      "name": "ui-graph-backplate",
+      "asset_type": "ui",
+      "source_file": "ui_graph_backplate.png",
+      "source_sha256": "dbe26c4f764e52be3e91b039a866b62c3a5d2e1f0e96d4e6a64337e52d9538c1",
+      "output_file": "assets/media/ui-graph-backplate.webp",
+      "output_sha256": "7058552ffa8b056acffe5ecae59fd852bc4c2de139864736ee15fe3da0eaa5d5",
+      "source_dimensions": [
+        1600,
+        900
+      ],
+      "output_dimensions": [
+        1600,
+        900
+      ],
+      "source_bytes": 518319,
+      "output_bytes": 22408,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-105",
+      "name": "ui-indicador-de-selecao",
+      "asset_type": "ui",
+      "source_file": "ui_indicador_de_selecao.png",
+      "source_sha256": "75fe8014d11457afffca6667da95fc3388060c1e500c3546cd325c032528caec",
+      "output_file": "assets/media/ui-indicador-de-selecao.webp",
+      "output_sha256": "215c24ea1c86ed4329503c18075b811b889ea17b6a2bd27149274214cece3e7b",
+      "source_dimensions": [
+        1024,
+        1024
+      ],
+      "output_dimensions": [
+        1024,
+        1024
+      ],
+      "source_bytes": 496037,
+      "output_bytes": 28488,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-106",
+      "name": "ui-loading-screen",
+      "asset_type": "ui",
+      "source_file": "ui_loading_screen.png",
+      "source_sha256": "e70e9a7cbbc349b8406425e6aadbaf52ee93d17a07e45086191ececc7dd534cd",
+      "output_file": "assets/media/ui-loading-screen.webp",
+      "output_sha256": "13909212214c5bebc473f05a6d1f7239d4c55553ca4bf822f3be87e881836749",
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "output_dimensions": [
+        1920,
+        1080
+      ],
+      "source_bytes": 950171,
+      "output_bytes": 54396,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-107",
+      "name": "ui-marcador-de-destaque",
+      "asset_type": "ui",
+      "source_file": "ui_marcador_de_destaque.png",
+      "source_sha256": "d93993e6bb0a7628709bacd6894e35c826d20e0286f0d5ae18db0a408c912f8c",
+      "output_file": "assets/media/ui-marcador-de-destaque.webp",
+      "output_sha256": "b84aacdbb1e81583ee3681166b51ea2c938d04e348d678ef6d578fb30860bcfb",
+      "source_dimensions": [
+        1920,
+        600
+      ],
+      "output_dimensions": [
+        1920,
+        600
+      ],
+      "source_bytes": 533068,
+      "output_bytes": 27288,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-108",
+      "name": "ui-notification-background",
+      "asset_type": "ui",
+      "source_file": "ui_notification_background.png",
+      "source_sha256": "98af2a4ebca23cba24e404eba65dc387a551fa2f79ecd348ae302aea60752709",
+      "output_file": "assets/media/ui-notification-background.webp",
+      "output_sha256": "5215be775c59b0834f8771eb6e8de825488915585d2745e056ee9dc92e3fdc15",
+      "source_dimensions": [
+        1600,
+        900
+      ],
+      "output_dimensions": [
+        1600,
+        900
+      ],
+      "source_bytes": 553770,
+      "output_bytes": 26648,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-109",
+      "name": "ui-spinner",
+      "asset_type": "ui",
+      "source_file": "ui_spinner.png",
+      "source_sha256": "c7806760fd6e581452216e8fc6762644f59d0f181a30eb455670d7b9f8cb8b1d",
+      "output_file": "assets/media/ui-spinner.webp",
+      "output_sha256": "1f53c11528190b26b63f20eca19bcd9a3fbfee80e5e6ae553cd0cd23d376c227",
+      "source_dimensions": [
+        1024,
+        1024
+      ],
+      "output_dimensions": [
+        1024,
+        1024
+      ],
+      "source_bytes": 532057,
+      "output_bytes": 26380,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    },
+    {
+      "asset_id": "f1vge-p1-110",
+      "name": "ui-timeline-background",
+      "asset_type": "ui",
+      "source_file": "ui_timeline_background.png",
+      "source_sha256": "4a96b4aa9ee722c79a1ccdef291c3120cb40c02d9433ecd6d0763f1b7843697c",
+      "output_file": "assets/media/ui-timeline-background.webp",
+      "output_sha256": "c38b016cac34352599acfce0f292120d77af7f940f0c7b6466fdeb2e148e04bb",
+      "source_dimensions": [
+        1600,
+        900
+      ],
+      "output_dimensions": [
+        1600,
+        900
+      ],
+      "source_bytes": 580283,
+      "output_bytes": 25658,
+      "rights_reference": "user-provided-licensed-package",
+      "season_id": "2026",
+      "qa_status": "optimized"
+    }
+  ]
+}
