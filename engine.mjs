@@ -60,6 +60,7 @@ export function createCareer(config) {
     technical: createTechnicalState(team),
     lastEvent: null,
     careerOffers: [],
+    trophies: [],
   };
 }
 
@@ -137,6 +138,12 @@ export function nextGrandPrix(state) {
   const next = deepCopy(state), current = next.technical.weekend.round;
   next.technical.weekend = { round: (current + 1) % CIRCUITS_2026.length, phase: "factory", circuit: CIRCUITS_2026[(current + 1) % CIRCUITS_2026.length], practiceRuns: [], telemetry: null, qualifying: null };
   return { ok: true, reason: `Logística preparada para ${next.technical.weekend.circuit.name}.`, state: finalize(next) };
+}
+
+export function selectCircuit(state, round) {
+  const next = deepCopy(state), index = clamp(Math.round(Number(round) || 0), 0, CIRCUITS_2026.length - 1);
+  next.technical.weekend = { round: index, phase: "factory", circuit: CIRCUITS_2026[index], practiceRuns: [], telemetry: null, qualifying: null, raceResult: null };
+  return { ok: true, reason: `${CIRCUITS_2026[index].flag} ${CIRCUITS_2026[index].grandPrix} selecionado.`, state: finalize(next) };
 }
 
 export function payroll(state) {
@@ -363,6 +370,10 @@ export function migrateSave(candidate) {
   candidate.technical.factoryCapacity ??= 2;
   candidate.technical.setup ||= { frontWing: 50, rearWing: 50, suspension: 50, brakeBalance: 55 };
   candidate.technical.weekend ||= { round: 0, phase: "factory", circuit: CIRCUITS_2026[0], practiceRuns: [], telemetry: null, qualifying: null };
+  const currentCircuit = CIRCUITS_2026.find(item => item.id === candidate.technical.weekend.circuit?.id) || CIRCUITS_2026[candidate.technical.weekend.round || 0] || CIRCUITS_2026[0];
+  candidate.technical.weekend.circuit = currentCircuit;
+  candidate.technical.weekend.round = CIRCUITS_2026.findIndex(item => item.id === currentCircuit.id);
+  candidate.trophies ||= [];
   if (!candidate.sponsorPipeline?.length || candidate.sponsorPipeline.some(item => /^spn-0/.test(item.id))) candidate.sponsorPipeline = deepCopy(SPONSORS);
   candidate.team.wikiTitle ||= Object.values(TEAMS).find(team => team.id === candidate.team.id)?.wikiTitle;
   for (const driver of candidate.team.drivers || []) driver.wikiTitle ||= driver.name.replaceAll(" ", "_");

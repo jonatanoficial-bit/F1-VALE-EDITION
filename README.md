@@ -1,6 +1,6 @@
-# F1 - Vale Gold Edition - Partes 1 e 2
+# F1 - Vale Gold Edition - Partes 1, 2 e 3
 
-Versão jogável das macroentregas **Fundação, Carreira e Gestão** e **Engenharia e Fim de Semana**, conforme a Bíblia Mestra.
+Versão jogável das macroentregas **Fundação, Carreira e Gestão**, **Engenharia e Fim de Semana** e **Corrida 2D completa**, conforme a Bíblia Mestra.
 
 ## Jogar localmente
 
@@ -35,7 +35,13 @@ Abra `http://localhost:8080` no navegador. O save é automático e fica no armaz
 - Orientação horizontal solicitada em celulares e tentativa de tela cheia/bloqueio de paisagem.
 - P&D em aerodinâmica, chassi, unidade de potência e confiabilidade.
 - Capacidade da fábrica, custos, duração e ganhos persistidos dos projetos.
-- Acerto do carro, treinos livres, telemetria e classificação determinística.
+- Calendário oficial 2026 com 23 etapas, bandeiras dos países e traçados 2D próprios.
+- TL1, TL2 e TL3 ao vivo, com envio e recolhimento dos dois pilotos e acerto durante a sessão.
+- Classificação completa em Q1, Q2 e Q3, eliminações e grid de 22 carros.
+- Corrida 2D ao vivo com classificação estilo TV, velocidades de 1× a 8× e direção de prova.
+- Estratégia individual de ritmo, motor, composto, janela de box e pit stop manual.
+- Desgaste de pneus, temperatura, energia e decisões com efeito direto no ritmo.
+- Pódio com fotos oficiais, troféus persistidos e histórico do resultado.
 
 ## Assets oficiais
 
@@ -43,4 +49,4 @@ Retratos reais dos pilotos e logotipos das equipes e dos patrocinadores foram ob
 
 ## Escopo
 
-As Partes 1 e 2 estão jogáveis e usam o mesmo estado. A corrida 2D completa permanece na Parte 3; carreira longa, IA e integração final permanecem na Parte 4.
+As Partes 1, 2 e 3 estão jogáveis e usam o mesmo estado. Carreira longa, acessibilidade, balanceamento avançado e integração final permanecem na Parte 4.

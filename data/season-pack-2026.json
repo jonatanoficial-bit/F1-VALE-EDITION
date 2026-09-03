@@ -9,5 +9,30 @@
     {"name":"Kimi Antonelli","team_id":"mercedes","overall":92},{"name":"George Russell","team_id":"mercedes","overall":89},{"name":"Lewis Hamilton","team_id":"ferrari","overall":89},{"name":"Charles Leclerc","team_id":"ferrari","overall":88},{"name":"Lando Norris","team_id":"mclaren","overall":88},{"name":"Oscar Piastri","team_id":"mclaren","overall":86},{"name":"Max Verstappen","team_id":"red-bull","overall":91},{"name":"Isack Hadjar","team_id":"red-bull","overall":81},{"name":"Liam Lawson","team_id":"racing-bulls","overall":78},{"name":"Arvid Lindblad","team_id":"racing-bulls","overall":75},{"name":"Pierre Gasly","team_id":"alpine","overall":79},{"name":"Franco Colapinto","team_id":"alpine","overall":74},{"name":"Oliver Bearman","team_id":"haas","overall":76},{"name":"Esteban Ocon","team_id":"haas","overall":76},{"name":"Gabriel Bortoleto","team_id":"audi","overall":74},{"name":"Nico Hülkenberg","team_id":"audi","overall":76},{"name":"Carlos Sainz","team_id":"williams","overall":81},{"name":"Alexander Albon","team_id":"williams","overall":79},{"name":"Fernando Alonso","team_id":"aston-martin","overall":84},{"name":"Lance Stroll","team_id":"aston-martin","overall":73},{"name":"Valtteri Bottas","team_id":"cadillac","overall":78},{"name":"Sergio Pérez","team_id":"cadillac","overall":78}
   ],
   "reserve_market": [{"name":"Yuki Tsunoda","overall":74,"status":"official-reserve"}],
+  "calendar": [
+    {"round":1,"id":"australia","country":"Austrália","flag":"🇦🇺","circuit":"Albert Park"},
+    {"round":2,"id":"china","country":"China","flag":"🇨🇳","circuit":"Shanghai International Circuit"},
+    {"round":3,"id":"japan","country":"Japão","flag":"🇯🇵","circuit":"Suzuka Circuit"},
+    {"round":4,"id":"miami","country":"Estados Unidos","flag":"🇺🇸","circuit":"Miami International Autodrome"},
+    {"round":5,"id":"canada","country":"Canadá","flag":"🇨🇦","circuit":"Circuit Gilles-Villeneuve"},
+    {"round":6,"id":"monaco","country":"Mônaco","flag":"🇲🇨","circuit":"Circuit de Monaco"},
+    {"round":7,"id":"barcelona","country":"Espanha","flag":"🇪🇸","circuit":"Circuit de Barcelona-Catalunya"},
+    {"round":8,"id":"austria","country":"Áustria","flag":"🇦🇹","circuit":"Red Bull Ring"},
+    {"round":9,"id":"great-britain","country":"Reino Unido","flag":"🇬🇧","circuit":"Silverstone Circuit"},
+    {"round":10,"id":"belgium","country":"Bélgica","flag":"🇧🇪","circuit":"Circuit de Spa-Francorchamps"},
+    {"round":11,"id":"hungary","country":"Hungria","flag":"🇭🇺","circuit":"Hungaroring"},
+    {"round":12,"id":"netherlands","country":"Países Baixos","flag":"🇳🇱","circuit":"Circuit Zandvoort"},
+    {"round":13,"id":"italy","country":"Itália","flag":"🇮🇹","circuit":"Autodromo Nazionale Monza"},
+    {"round":14,"id":"madrid","country":"Espanha","flag":"🇪🇸","circuit":"MADRING"},
+    {"round":15,"id":"azerbaijan","country":"Azerbaijão","flag":"🇦🇿","circuit":"Baku City Circuit"},
+    {"round":16,"id":"malaysia","country":"Malásia","flag":"🇲🇾","circuit":"Sepang International Circuit"},
+    {"round":17,"id":"singapore","country":"Singapura","flag":"🇸🇬","circuit":"Marina Bay Street Circuit"},
+    {"round":18,"id":"united-states","country":"Estados Unidos","flag":"🇺🇸","circuit":"Circuit of the Americas"},
+    {"round":19,"id":"mexico","country":"México","flag":"🇲🇽","circuit":"Autódromo Hermanos Rodríguez"},
+    {"round":20,"id":"brazil","country":"Brasil","flag":"🇧🇷","circuit":"Autódromo José Carlos Pace"},
+    {"round":21,"id":"las-vegas","country":"Estados Unidos","flag":"🇺🇸","circuit":"Las Vegas Strip Circuit"},
+    {"round":22,"id":"qatar","country":"Catar","flag":"🇶🇦","circuit":"Lusail International Circuit"},
+    {"round":23,"id":"abu-dhabi","country":"Emirados Árabes Unidos","flag":"🇦🇪","circuit":"Yas Marina Circuit"}
+  ],
   "fictional_revelations_are_separate": true
 }
