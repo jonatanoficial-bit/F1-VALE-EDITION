@@ -1,4 +1,4 @@
-import { DRIVERS_2026, GAME_VERSION, ORIGINS, REVELATION_DRIVERS, RULESET, SCHEMA_VERSION, SPONSORS, STAFF_MARKET, TEAMS, WEEKLY_EVENTS } from "./data/game-data.mjs";
+import { CIRCUITS_2026, DEVELOPMENT_AREAS, DRIVERS_2026, GAME_VERSION, ORIGINS, REVELATION_DRIVERS, RULESET, SCHEMA_VERSION, SPONSORS, STAFF_MARKET, TEAMS, WEEKLY_EVENTS } from "./data/game-data.mjs";
 
 export const clamp = (value, min = 0, max = 100) => Math.min(max, Math.max(min, value));
 export const deepCopy = value => JSON.parse(JSON.stringify(value));
@@ -57,9 +57,86 @@ export function createCareer(config) {
     morale: Math.round(average(team.staff.map(item => item.morale))),
     brand: team.brand,
     departmentProgress: { Técnica: 0, Corrida: 0, Operações: 0, Comercial: 0, Pessoas: 0 },
+    technical: createTechnicalState(team),
     lastEvent: null,
     careerOffers: [],
   };
+}
+
+export function createTechnicalState(team) {
+  const seed = team.overall || 70;
+  return {
+    car: { aero: clamp(seed - 3), chassis: clamp(seed - 1), power: clamp(seed), reliability: clamp(seed + 2) },
+    researchPoints: 8,
+    factoryCapacity: 2,
+    projects: [],
+    completedProjects: [],
+    setup: { frontWing: 50, rearWing: 50, suspension: 50, brakeBalance: 55 },
+    weekend: { round: 0, phase: "factory", circuit: CIRCUITS_2026[0], practiceRuns: [], telemetry: null, qualifying: null },
+  };
+}
+
+export function startDevelopment(state, areaId) {
+  const next = deepCopy(state), area = DEVELOPMENT_AREAS.find(item => item.id === areaId);
+  if (!area) return { ok: false, reason: "Área de desenvolvimento inválida.", state };
+  if (next.technical.projects.length >= next.technical.factoryCapacity) return { ok: false, reason: "A fábrica já está operando em capacidade máxima.", state };
+  if (next.cash < area.baseCost) return { ok: false, reason: "Caixa insuficiente para iniciar o projeto.", state };
+  if (next.technical.projects.some(project => project.areaId === areaId)) return { ok: false, reason: "Já existe um projeto ativo nessa área.", state };
+  next.cash -= area.baseCost;
+  next.costCap.spent += area.baseCost;
+  next.technical.projects.push({ id: `${areaId}-${next.week}`, areaId, label: area.label, stat: area.stat, cost: area.baseCost, weeksRemaining: area.duration, totalWeeks: area.duration, expectedGain: 2 + Math.floor(seededRandom(`${next.saveId}:${areaId}:${next.week}`) * 4) });
+  next.financialLog.push({ week: next.week, category: `P&D: ${area.label}`, amount: -area.baseCost, includedInCap: true });
+  next.history.push({ week: next.week, type: "engineering", text: `Projeto de ${area.label} iniciado.` });
+  return { ok: true, reason: `${area.label}: desenvolvimento iniciado.`, state: finalize(next) };
+}
+
+export function updateSetup(state, setup) {
+  const next = deepCopy(state);
+  for (const key of Object.keys(next.technical.setup)) next.technical.setup[key] = clamp(Number(setup[key]));
+  next.history.push({ week: next.week, type: "setup", text: "Acerto dos dois carros atualizado para o próximo treino." });
+  return { ok: true, reason: "Acerto salvo.", state: finalize(next) };
+}
+
+function setupScore(technical, circuit) {
+  const targetWing = circuit.aero > 75 ? 70 : circuit.power > 75 ? 38 : 54;
+  const targetSuspension = circuit.tyre > 70 ? 62 : 48;
+  return clamp(100 - Math.abs(technical.setup.frontWing - targetWing) * .7 - Math.abs(technical.setup.rearWing - targetWing) * .55 - Math.abs(technical.setup.suspension - targetSuspension) * .55 - Math.abs(technical.setup.brakeBalance - 55) * .4);
+}
+
+export function runPractice(state) {
+  const next = deepCopy(state), weekend = next.technical.weekend;
+  if (weekend.practiceRuns.length >= 3) return { ok: false, reason: "As três sessões de treino já foram concluídas.", state };
+  const session = weekend.practiceRuns.length + 1, setup = setupScore(next.technical, weekend.circuit);
+  const car = average(Object.values(next.technical.car));
+  const feedback = average(next.team.drivers.map(driver => driver.feedback || driver.rating));
+  const pace = clamp(car * .56 + setup * .28 + feedback * .16 + (seededRandom(`${next.saveId}:fp:${weekend.round}:${session}`) - .5) * 5);
+  const tyreWear = clamp(100 - weekend.circuit.tyre * .55 - next.technical.car.reliability * .18 + (100 - setup) * .2, 8, 82);
+  weekend.practiceRuns.push({ session: `TL${session}`, pace: Math.round(pace), setup: Math.round(setup), tyreWear: Math.round(tyreWear) });
+  weekend.telemetry = { pace: Math.round(pace), setup: Math.round(setup), tyreWear: Math.round(tyreWear), confidence: clamp(Math.round(feedback * .7 + session * 7)) };
+  weekend.phase = session === 3 ? "qualifying-ready" : "practice";
+  next.history.push({ week: next.week, type: "practice", text: `TL${session} concluído em ${weekend.circuit.name}: ritmo ${Math.round(pace)}.` });
+  return { ok: true, reason: `TL${session} concluído. Telemetria atualizada.`, state: finalize(next) };
+}
+
+export function runQualifying(state) {
+  const next = deepCopy(state), weekend = next.technical.weekend;
+  if (weekend.practiceRuns.length < 1) return { ok: false, reason: "Complete pelo menos um treino antes da classificação.", state };
+  if (weekend.qualifying) return { ok: false, reason: "A classificação deste GP já foi concluída.", state };
+  const setup = setupScore(next.technical, weekend.circuit), car = average(Object.values(next.technical.car));
+  const results = next.team.drivers.map((driver, index) => {
+    const performance = driver.pace * .48 + car * .34 + setup * .18 + (seededRandom(`${next.saveId}:q:${weekend.round}:${driver.id}`) - .5) * 8;
+    return { driverId: driver.id, name: driver.name, performance: Math.round(performance * 10) / 10, position: clamp(Math.round(23 - performance / 4.8 + index), 1, 22) };
+  }).sort((a, b) => a.position - b.position);
+  weekend.qualifying = results;
+  weekend.phase = "grid-set";
+  next.history.push({ week: next.week, type: "qualifying", text: `Grid definido em ${weekend.circuit.name}: ${results.map(item => `${item.name} P${item.position}`).join(" e ")}.` });
+  return { ok: true, reason: "Classificação concluída e grid salvo.", state: finalize(next) };
+}
+
+export function nextGrandPrix(state) {
+  const next = deepCopy(state), current = next.technical.weekend.round;
+  next.technical.weekend = { round: (current + 1) % CIRCUITS_2026.length, phase: "factory", circuit: CIRCUITS_2026[(current + 1) % CIRCUITS_2026.length], practiceRuns: [], telemetry: null, qualifying: null };
+  return { ok: true, reason: `Logística preparada para ${next.technical.weekend.circuit.name}.`, state: finalize(next) };
 }
 
 export function payroll(state) {
@@ -228,6 +305,15 @@ export function advanceWeek(state) {
     person.morale = clamp(person.morale + (support > 10_000_000 ? 0.35 : -0.2));
     next.departmentProgress[person.department] = (next.departmentProgress[person.department] || 0) + (person.rating * support / 90_000_000);
   }
+  for (const project of next.technical.projects) project.weeksRemaining -= 1;
+  const completed = next.technical.projects.filter(project => project.weeksRemaining <= 0);
+  for (const project of completed) {
+    next.technical.car[project.stat] = clamp(next.technical.car[project.stat] + project.expectedGain);
+    next.technical.completedProjects.unshift({ ...project, completedWeek: next.week });
+    next.history.push({ week: next.week, type: "engineering", text: `${project.label} concluído: +${project.expectedGain} no carro.` });
+  }
+  next.technical.projects = next.technical.projects.filter(project => project.weeksRemaining > 0);
+  next.technical.researchPoints += Math.max(1, Math.round((next.team.staff.find(person => person.department === "Técnica")?.rating || 60) / 30));
   const event = WEEKLY_EVENTS[Math.floor(seededRandom(`${next.saveId}:week:${next.week}`) * WEEKLY_EVENTS.length)];
   next.lastEvent = event;
   next.morale = clamp(Math.round(average(next.team.staff.map(item => item.morale))) + (event.morale || 0));
@@ -269,5 +355,18 @@ export function migrateSave(candidate) {
   if (!candidate || typeof candidate !== "object") throw new Error("Save inválido.");
   if (!candidate.schemaVersion) candidate.schemaVersion = 1;
   if (candidate.schemaVersion > SCHEMA_VERSION) throw new Error("Save criado por versão mais nova.");
+  if (!candidate.technical) candidate.technical = createTechnicalState(candidate.team || TEAMS.mercedes);
+  candidate.technical.car ||= { aero: 70, chassis: 70, power: 70, reliability: 72 };
+  candidate.technical.projects ||= [];
+  candidate.technical.completedProjects ||= [];
+  candidate.technical.researchPoints ??= 8;
+  candidate.technical.factoryCapacity ??= 2;
+  candidate.technical.setup ||= { frontWing: 50, rearWing: 50, suspension: 50, brakeBalance: 55 };
+  candidate.technical.weekend ||= { round: 0, phase: "factory", circuit: CIRCUITS_2026[0], practiceRuns: [], telemetry: null, qualifying: null };
+  if (!candidate.sponsorPipeline?.length || candidate.sponsorPipeline.some(item => /^spn-0/.test(item.id))) candidate.sponsorPipeline = deepCopy(SPONSORS);
+  candidate.team.wikiTitle ||= Object.values(TEAMS).find(team => team.id === candidate.team.id)?.wikiTitle;
+  for (const driver of candidate.team.drivers || []) driver.wikiTitle ||= driver.name.replaceAll(" ", "_");
+  for (const driver of candidate.driverMarket || []) if (driver.official) driver.wikiTitle ||= driver.name.replaceAll(" ", "_");
+  candidate.schemaVersion = SCHEMA_VERSION;
   return finalize(candidate);
 }

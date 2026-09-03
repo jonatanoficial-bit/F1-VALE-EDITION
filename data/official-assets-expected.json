@@ -4,5 +4,9 @@
   "policy": "official-only-no-generated-substitute",
   "team_logo_ids": ["official-team-logo-mercedes-2026","official-team-logo-ferrari-2026","official-team-logo-mclaren-2026","official-team-logo-red-bull-2026","official-team-logo-racing-bulls-2026","official-team-logo-alpine-2026","official-team-logo-haas-2026","official-team-logo-audi-2026","official-team-logo-williams-2026","official-team-logo-aston-martin-2026","official-team-logo-cadillac-2026"],
   "driver_portrait_names": ["Kimi Antonelli","George Russell","Lewis Hamilton","Charles Leclerc","Lando Norris","Oscar Piastri","Max Verstappen","Isack Hadjar","Liam Lawson","Arvid Lindblad","Pierre Gasly","Franco Colapinto","Oliver Bearman","Esteban Ocon","Gabriel Bortoleto","Nico Hülkenberg","Carlos Sainz","Alexander Albon","Fernando Alonso","Lance Stroll","Valtteri Bottas","Sergio Pérez","Yuki Tsunoda"],
-  "status": "awaiting-identified-licensed-files"
+  "source": "https://www.formula1.com/en/drivers and https://www.formula1.com/en/teams",
+  "manifest": "data/official-media-manifest.json",
+  "sponsor_brands": ["Pirelli", "DHL", "AWS", "Aramco"],
+  "usage_note": "real public imagery and trademark references; no affiliation or endorsement",
+  "status": "38-official-media-files-bundled-locally"
 }

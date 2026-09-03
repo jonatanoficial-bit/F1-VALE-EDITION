@@ -1,5 +1,5 @@
-export const GAME_VERSION = "1.0.0-p1";
-export const SCHEMA_VERSION = 1;
+export const GAME_VERSION = "2.0.0-p2";
+export const SCHEMA_VERSION = 2;
 export const RULESET = {
   id: "f1vge-rules-2026-p1",
   season: 2026,
@@ -27,7 +27,7 @@ export const DRIVERS_2026 = [
   ["Oliver Bearman", "haas", 76], ["Esteban Ocon", "haas", 76], ["Gabriel Bortoleto", "audi", 74], ["Nico Hülkenberg", "audi", 76],
   ["Carlos Sainz", "williams", 81], ["Alexander Albon", "williams", 79], ["Fernando Alonso", "aston-martin", 84], ["Lance Stroll", "aston-martin", 73],
   ["Valtteri Bottas", "cadillac", 78], ["Sergio Pérez", "cadillac", 78], ["Yuki Tsunoda", null, 74],
-].map(([name, teamId, overall], index) => ({ id: `driver-2026-${index + 1}`, name, teamId, overall, seasonStatus: teamId ? "active" : "reserve-market" }));
+].map(([name, teamId, overall], index) => ({ id: `driver-2026-${index + 1}`, name, teamId, overall, seasonStatus: teamId ? "active" : "reserve-market", wikiTitle: name.replaceAll(" ", "_") }));
 
 export const REVELATION_DRIVERS = [
   { id: "reveal-01", name: "Miguel Azevedo", nationality: "Portugal", age: 19, potential: 84, superLicense: 32, status: "prospect" },
@@ -37,15 +37,15 @@ export const REVELATION_DRIVERS = [
 ];
 
 const TEAM_META = {
-  mercedes:["Mercedes","MERCEDES","Reino Unido","#00a19b",92], ferrari:["Ferrari","FERRARI","Itália","#dc0000",89], mclaren:["McLaren","MCLAREN","Reino Unido","#ff8700",87],
-  "red-bull":["Red Bull","RED BULL","Áustria","#1e41ff",84], "racing-bulls":["Racing Bulls","RACING BULLS","Itália","#6692ff",73], alpine:["Alpine","ALPINE","França","#2293d1",72],
-  haas:["Haas","HAAS","Estados Unidos","#b6babd",68], audi:["Audi","AUDI","Alemanha","#e0002a",67], williams:["Williams","WILLIAMS","Reino Unido","#005aff",66],
-  "aston-martin":["Aston Martin","ASTON MARTIN","Reino Unido","#006f62",63], cadillac:["Cadillac","CADILLAC","Estados Unidos","#c9a66b",61],
+  mercedes:["Mercedes","MERCEDES","Reino Unido","#00a19b",92,"Mercedes-Benz_in_Formula_One"], ferrari:["Ferrari","FERRARI","Itália","#dc0000",89,"Scuderia_Ferrari"], mclaren:["McLaren","MCLAREN","Reino Unido","#ff8700",87,"McLaren"],
+  "red-bull":["Red Bull","RED BULL","Áustria","#1e41ff",84,"Red_Bull_Racing"], "racing-bulls":["Racing Bulls","RACING BULLS","Itália","#6692ff",73,"Racing_Bulls"], alpine:["Alpine","ALPINE","França","#2293d1",72,"Alpine_F1_Team"],
+  haas:["Haas","HAAS","Estados Unidos","#b6babd",68,"Haas_F1_Team"], audi:["Audi","AUDI","Alemanha","#e0002a",67,"Audi_in_Formula_One"], williams:["Williams","WILLIAMS","Reino Unido","#005aff",66,"Williams_Racing"],
+  "aston-martin":["Aston Martin","ASTON MARTIN","Reino Unido","#006f62",63,"Aston_Martin_in_Formula_One"], cadillac:["Cadillac","CADILLAC","Estados Unidos","#c9a66b",61,"Cadillac_Formula_1_Team"],
 };
 const STAFF_NAMES = [["Helena Moretti","Rafael Costa","Bruna Nishimura","André Lima"],["Edward Mercer","Sara Bellini","Noah Williams","Maya Okafor"],["Camille Durand","Tobias Klein","Aisha Rahman","Marco Silva"]];
-function buildTeam([key,[name,shortName,nationality,color,overall]], index) {
+function buildTeam([key,[name,shortName,nationality,color,overall,wikiTitle]], index) {
   const names=STAFF_NAMES[index%STAFF_NAMES.length], drivers=DRIVERS_2026.filter(driver=>driver.teamId===key);
-  return [key,{id:`team-2026-${key}`,name,shortName,nationality,overall,hq:`${name} Team HQ`,reputation:68,brand:70,cash:46_000_000,boardConfidence:66,color,background:`assets/media/cinematica-${String(11+index).padStart(3,"0")}.webp`,logoAssetId:`official-team-logo-${key}-2026`,board:{owner:`${name} Ownership`,ambition:78,patience:54,riskTolerance:58},targets:[{id:"finance",label:"Fechar o trimestre com caixa positivo",target:1},{id:"staff",label:"Elevar a média do staff técnico para 75",target:75},{id:"sponsor",label:"Garantir US$ 20 mi em patrocínio",target:20_000_000}],drivers:drivers.map((driver,slot)=>({id:driver.id,name:driver.name,role:`Piloto ${slot+1}`,rating:driver.overall,overall:driver.overall,potential:Math.min(95,driver.overall+2),pace:driver.overall,feedback:Math.max(65,driver.overall-3),consistency:Math.max(65,driver.overall-2),marketing:74,morale:72,salary:8_000_000-slot*1_000_000,years:2,assetId:`official-driver-portrait-${driver.id}`})),staff:[{id:`stf-${key}-01`,name:names[0],role:"Diretor(a) Técnico(a)",department:"Técnica",rating:78,potential:84,salary:1_850_000,years:2,morale:74,fatigue:18,specialty:"Correlação"},{id:`stf-${key}-02`,name:names[1],role:"Chefe de Estratégia",department:"Corrida",rating:74,potential:81,salary:1_180_000,years:2,morale:71,fatigue:22,specialty:"Cenários"},{id:`stf-${key}-03`,name:names[2],role:"Diretor(a) Comercial",department:"Comercial",rating:72,potential:79,salary:980_000,years:1,morale:76,fatigue:16,specialty:"Negociação"},{id:`stf-${key}-04`,name:names[3],role:"Chefe de Operações",department:"Operações",rating:73,potential:78,salary:1_050_000,years:2,morale:70,fatigue:24,specialty:"Logística"}]}];
+  return [key,{id:`team-2026-${key}`,name,shortName,nationality,overall,wikiTitle,hq:`${name} Team HQ`,reputation:68,brand:70,cash:46_000_000,boardConfidence:66,color,background:`assets/media/cinematica-${String(11+index).padStart(3,"0")}.webp`,logoAssetId:`official-team-logo-${key}-2026`,board:{owner:`${name} Ownership`,ambition:78,patience:54,riskTolerance:58},targets:[{id:"finance",label:"Fechar o trimestre com caixa positivo",target:1},{id:"staff",label:"Elevar a média do staff técnico para 75",target:75},{id:"sponsor",label:"Garantir US$ 20 mi em patrocínio",target:20_000_000}],drivers:drivers.map((driver,slot)=>({id:driver.id,name:driver.name,wikiTitle:driver.wikiTitle,role:`Piloto ${slot+1}`,rating:driver.overall,overall:driver.overall,potential:Math.min(95,driver.overall+2),pace:driver.overall,feedback:Math.max(65,driver.overall-3),consistency:Math.max(65,driver.overall-2),marketing:74,morale:72,salary:8_000_000-slot*1_000_000,years:2,assetId:`official-driver-portrait-${driver.id}`})),staff:[{id:`stf-${key}-01`,name:names[0],role:"Diretor(a) Técnico(a)",department:"Técnica",rating:78,potential:84,salary:1_850_000,years:2,morale:74,fatigue:18,specialty:"Correlação"},{id:`stf-${key}-02`,name:names[1],role:"Chefe de Estratégia",department:"Corrida",rating:74,potential:81,salary:1_180_000,years:2,morale:71,fatigue:22,specialty:"Cenários"},{id:`stf-${key}-03`,name:names[2],role:"Diretor(a) Comercial",department:"Comercial",rating:72,potential:79,salary:980_000,years:1,morale:76,fatigue:16,specialty:"Negociação"},{id:`stf-${key}-04`,name:names[3],role:"Chefe de Operações",department:"Operações",rating:73,potential:78,salary:1_050_000,years:2,morale:70,fatigue:24,specialty:"Logística"}]}];
 }
 export const TEAMS = Object.fromEntries(Object.entries(TEAM_META).map(buildTeam));
 
@@ -59,10 +59,24 @@ export const STAFF_MARKET = [
 ];
 
 export const SPONSORS = [
-  { id: "spn-01", name: "Nexa Dynamics", sector: "Tecnologia", territory: "Global", annualValue: 14_000_000, upfront: 4_200_000, target: "brand", demand: 68, tolerance: 64, exclusivity: "Tecnologia", assetId: null },
-  { id: "spn-02", name: "Orbe Energia", sector: "Energia", territory: "Américas", annualValue: 11_500_000, upfront: 3_100_000, target: "activation", demand: 60, tolerance: 72, exclusivity: "Energia", assetId: null },
-  { id: "spn-03", name: "Kinetic Capital", sector: "Financeiro", territory: "Europa", annualValue: 18_000_000, upfront: 5_800_000, target: "reputation", demand: 78, tolerance: 55, exclusivity: "Financeiro", assetId: null },
-  { id: "spn-04", name: "Altura Cloud", sector: "Software", territory: "Global", annualValue: 8_800_000, upfront: 2_700_000, target: "digital", demand: 54, tolerance: 80, exclusivity: "Software", assetId: null },
+  { id: "spn-pirelli", name: "Pirelli", wikiTitle: "Pirelli", sector: "Pneus", territory: "Global", annualValue: 14_000_000, upfront: 4_200_000, target: "brand", demand: 68, tolerance: 64, exclusivity: "Pneus", assetId: "real-sponsor-pirelli" },
+  { id: "spn-dhl", name: "DHL", wikiTitle: "DHL", sector: "Logística", territory: "Global", annualValue: 11_500_000, upfront: 3_100_000, target: "activation", demand: 60, tolerance: 72, exclusivity: "Logística", assetId: "real-sponsor-dhl" },
+  { id: "spn-aws", name: "AWS", wikiTitle: "Amazon_Web_Services", sector: "Tecnologia", territory: "Global", annualValue: 18_000_000, upfront: 5_800_000, target: "reputation", demand: 78, tolerance: 55, exclusivity: "Tecnologia", assetId: "real-sponsor-aws" },
+  { id: "spn-aramco", name: "Aramco", wikiTitle: "Saudi_Aramco", sector: "Energia", territory: "Global", annualValue: 8_800_000, upfront: 2_700_000, target: "digital", demand: 54, tolerance: 80, exclusivity: "Energia", assetId: "real-sponsor-aramco" },
+];
+
+export const DEVELOPMENT_AREAS = [
+  { id: "aero", label: "Aerodinâmica", stat: "aero", baseCost: 2_800_000, duration: 3, image: "assets/media/hq-escritorio-design.webp" },
+  { id: "chassis", label: "Chassi", stat: "chassis", baseCost: 2_400_000, duration: 3, image: "assets/media/hq-fabricacao.webp" },
+  { id: "power", label: "Unidade de potência", stat: "power", baseCost: 3_200_000, duration: 4, image: "assets/media/hq-unidade-potencia.webp" },
+  { id: "reliability", label: "Confiabilidade", stat: "reliability", baseCost: 1_900_000, duration: 2, image: "assets/media/hq-componentes-confiabilidade.webp" },
+];
+
+export const CIRCUITS_2026 = [
+  { id: "australia", name: "Albert Park", country: "Austrália", laps: 58, aero: 72, power: 68, tyre: 61 },
+  { id: "china", name: "Shanghai", country: "China", laps: 56, aero: 65, power: 76, tyre: 70 },
+  { id: "japan", name: "Suzuka", country: "Japão", laps: 53, aero: 86, power: 62, tyre: 78 },
+  { id: "miami", name: "Miami", country: "Estados Unidos", laps: 57, aero: 62, power: 81, tyre: 66 },
 ];
 
 export const WEEKLY_EVENTS = [
@@ -76,5 +90,6 @@ export const WEEKLY_EVENTS = [
 export const NAV_ITEMS = [
   ["overview", "Visão geral"], ["people", "Pessoas"], ["contracts", "Contratos"],
   ["sponsors", "Patrocínios"], ["finances", "Finanças"], ["board", "Conselho"],
+  ["engineering", "Engenharia"], ["car", "Carro"], ["weekend", "Fim de semana"], ["telemetry", "Telemetria"],
   ["career", "Carreira"], ["archive", "Arquivo visual"], ["roadmap", "4 Partes"],
 ];

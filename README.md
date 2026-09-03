@@ -1,6 +1,6 @@
-# F1 - Vale Gold Edition - Parte 1
+# F1 - Vale Gold Edition - Partes 1 e 2
 
-Versão jogável da macroentrega **Fundação, Carreira e Gestão**, conforme a Bíblia Mestra.
+Versão jogável das macroentregas **Fundação, Carreira e Gestão** e **Engenharia e Fim de Semana**, conforme a Bíblia Mestra.
 
 ## Jogar localmente
 
@@ -31,11 +31,16 @@ Abra `http://localhost:8080` no navegador. O save é automático e fica no armaz
 - Avanço semanal com consequências determinísticas e histórico.
 - Save local, backup, exportação, importação e migração.
 - Arquivo visual com os 110 assets fornecidos, renomeados e otimizados.
+- Abertura em vídeo com áudio após o toque/clique inicial.
+- Orientação horizontal solicitada em celulares e tentativa de tela cheia/bloqueio de paisagem.
+- P&D em aerodinâmica, chassi, unidade de potência e confiabilidade.
+- Capacidade da fábrica, custos, duração e ganhos persistidos dos projetos.
+- Acerto do carro, treinos livres, telemetria e classificação determinística.
 
 ## Assets oficiais
 
-Logos de equipes e retratos de pilotos só são exibidos quando seus arquivos licenciados são vinculados aos IDs em `data/official-assets-expected.json`. Enquanto faltam arquivos oficiais identificados, a interface usa texto e iniciais; não há imitação gerada.
+Retratos reais dos pilotos e logotipos das equipes e dos patrocinadores foram obtidos da página oficial da Fórmula 1, incorporados ao pacote e documentados em `data/official-media-manifest.json`. As imagens e marcas são propriedade de seus respectivos titulares e aparecem em contexto editorial de uma simulação fictícia, sem afiliação ou endosso. O jogo não cria imitações de pilotos ou marcas oficiais.
 
 ## Escopo
 
-As Partes 2, 3 e 4 aparecem no roadmap interno e reutilizarão o mesmo estado. Engenharia, fim de semana, corrida 2D e integração final não são simulados nesta entrega.
+As Partes 1 e 2 estão jogáveis e usam o mesmo estado. A corrida 2D completa permanece na Parte 3; carreira longa, IA e integração final permanecem na Parte 4.

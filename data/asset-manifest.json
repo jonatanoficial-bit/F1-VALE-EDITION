@@ -1,5 +1,18 @@
 {
   "schema_version": 1,
+  "supplemental_assets": [
+    {
+      "asset_id": "f1vge-p2-opening-video",
+      "name": "abertura-f1-vale",
+      "asset_type": "video",
+      "source_file": "video abertura formula 1 (1).mp4",
+      "output_file": "assets/video/abertura-f1-vale.mp4",
+      "output_sha256": "015763e61627bae1f1e0236177d22f08db369f52a1f96235b9aaa5c0ddaefea1",
+      "output_bytes": 15514070,
+      "rights_reference": "user-provided-licensed-package",
+      "qa_status": "integrated"
+    }
+  ],
   "assets": [
     {
       "asset_id": "f1vge-p1-001",
