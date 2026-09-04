@@ -1,6 +1,6 @@
-# F1 - Vale Gold Edition - Partes 1, 2 e 3
+# F1 - Vale Gold Edition - Partes 1, 2, 3 e 4
 
-Versão jogável das macroentregas **Fundação, Carreira e Gestão**, **Engenharia e Fim de Semana** e **Corrida 2D completa**, conforme a Bíblia Mestra.
+Versão completa das quatro macroentregas da Bíblia Mestra: gestão, engenharia, fim de semana, corrida 2D e carreira integrada.
 
 ## Jogar localmente
 
@@ -28,7 +28,9 @@ Abra `http://localhost:8080` no navegador. O save é automático e fica no armaz
 - Negociação de patrocínios, exclusividade, campanhas e valor de marca.
 - Caixa, forecast departamental, teto de custos versionado e auditoria.
 - Conselho, metas, confiança, demissão, propostas e continuidade da carreira.
-- Avanço semanal com consequências determinísticas e histórico.
+- Calendário diário que para automaticamente quando chega o fim de semana de corrida.
+- Metas contratuais, revisões trimestrais, advertências, demissão e propostas em janelas do mercado.
+- Central de e-mails com Vale e funcionários originais de engenharia, mecânica, finanças, marketing, direção esportiva, RH e clima.
 - Save local, backup, exportação, importação e migração.
 - Arquivo visual com os 110 assets fornecidos, renomeados e otimizados.
 - Abertura em vídeo com áudio após o toque/clique inicial.
@@ -38,10 +40,14 @@ Abra `http://localhost:8080` no navegador. O save é automático e fica no armaz
 - Calendário oficial 2026 com 23 etapas, bandeiras dos países e traçados 2D próprios.
 - TL1, TL2 e TL3 ao vivo, com envio e recolhimento dos dois pilotos e acerto durante a sessão.
 - Classificação completa em Q1, Q2 e Q3, eliminações e grid de 22 carros.
-- Corrida 2D ao vivo com classificação estilo TV, velocidades de 1× a 8× e direção de prova.
+- Corrida 2D ao vivo com classificação estilo TV e escalas 1×, 2×, 3×, 4× e 8× recalibradas.
 - Estratégia individual de ritmo, motor, composto, janela de box e pit stop manual.
-- Desgaste de pneus, temperatura, energia e decisões com efeito direto no ritmo.
+- Voltas em 1× próximas do tempo real de cada circuito e aceleração progressiva até 8×.
+- Parada obrigatória em prova seca, dois compostos, perda do pit lane e serviço conforme qualidade dos mecânicos.
+- Clima dinâmico, pista molhada, temperatura de pista/pneu, cinco compostos e decisões com efeito direto no ritmo.
 - Pódio com fotos oficiais, troféus persistidos e histórico do resultado.
+- Classificações acumuladas de pilotos e construtores.
+- Identidade visual por escuderia e opções de escala de texto, alto contraste e redução de animações.
 
 ## Assets oficiais
 
@@ -49,4 +55,4 @@ Retratos reais dos pilotos e logotipos das equipes e dos patrocinadores foram ob
 
 ## Escopo
 
-As Partes 1, 2 e 3 estão jogáveis e usam o mesmo estado. Carreira longa, acessibilidade, balanceamento avançado e integração final permanecem na Parte 4.
+As quatro partes estão jogáveis e compartilham o mesmo save migrável. A temporada-base permanece 2026, com os pilotos e construtores definidos pelo projeto.

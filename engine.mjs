@@ -1,4 +1,4 @@
-import { CIRCUITS_2026, DEVELOPMENT_AREAS, DRIVERS_2026, GAME_VERSION, ORIGINS, REVELATION_DRIVERS, RULESET, SCHEMA_VERSION, SPONSORS, STAFF_MARKET, TEAMS, WEEKLY_EVENTS } from "./data/game-data.mjs";
+import { CIRCUITS_2026, DEVELOPMENT_AREAS, DRIVERS_2026, GAME_VERSION, ORIGINS, REVELATION_DRIVERS, RULESET, SCHEMA_VERSION, SPONSORS, STAFF_MARKET, SUPPORT_CHARACTERS, TEAMS, WEEKLY_EVENTS } from "./data/game-data.mjs";
 
 export const clamp = (value, min = 0, max = 100) => Math.min(max, Math.max(min, value));
 export const deepCopy = value => JSON.parse(JSON.stringify(value));
@@ -32,6 +32,7 @@ export function createCareer(config) {
     updatedAt: new Date().toISOString(),
     status: "employed",
     week: 1,
+    calendar: { day: 1, nextRaceDay: 5, raceDue: false, label: "Segunda-feira" },
     season: RULESET.season,
     manager: {
       name: config.name.trim(), nationality: config.nationality || "Brasil", age: Number(config.age) || 38,
@@ -50,7 +51,10 @@ export function createCareer(config) {
       ...DRIVERS_2026.filter(driver => driver.seasonStatus === "reserve-market").map(driver => ({ ...driver, rating: driver.overall, potential: driver.overall + 1, salary: 4_800_000, interest: 68, official: true, assetId: `official-driver-portrait-${driver.id}` })),
       ...REVELATION_DRIVERS.map(driver => ({ ...driver, rating: Math.max(62, driver.potential - 18), salary: 850_000, interest: 84, official: false, assetId: null })),
     ],
-    inbox: [{ id: "welcome", week: 1, title: "Contrato confirmado", text: `O conselho de ${team.name} espera decisões sustentáveis desde a primeira semana.`, read: false }],
+    inbox: [
+      { id: "welcome-vale", week: 1, day: 1, senderId: "vale", sector: "Tutorial", title: "Bem-vindo ao paddock", text: `Eu sou Vale. Vou acompanhar sua carreira em ${team.name}. Avance os dias, leia os setores e prepare os dois carros antes de cada GP.`, read: false },
+      { id: "welcome-board", week: 1, day: 1, senderId: "camila", sector: "Conselho", title: "Metas do contrato", text: `O conselho exige evolução sustentável, caixa positivo e resultados compatíveis com o nível ${team.overall} da equipe. Confiança abaixo de 18% pode encerrar seu contrato.`, read: false },
+    ],
     history: [{ week: 1, type: "career", text: `${config.name.trim()} assumiu ${team.name}.` }],
     financialLog: [{ week: 1, category: "Saldo inicial", amount: team.cash, includedInCap: false }],
     boardConfidence: team.boardConfidence,
@@ -61,6 +65,10 @@ export function createCareer(config) {
     lastEvent: null,
     careerOffers: [],
     trophies: [],
+    championship: { drivers: Object.fromEntries(DRIVERS_2026.filter(d=>d.teamId).map(d=>[d.id,{driverId:d.id,name:d.name,teamId:d.teamId,points:0,wins:0}])), constructors: Object.fromEntries(Object.keys(TEAMS).map(k=>[k,{teamId:k,name:TEAMS[k].name,points:0,wins:0}])), rounds: [] },
+    preferences: { fontScale: 100, highContrast: false, reducedMotion: false },
+    tutorial: { active: true, step: 0, completed: false },
+    contract: { warnings: 0, objectiveScore: 66, reviewWeek: 13 },
   };
 }
 
@@ -137,6 +145,9 @@ export function runQualifying(state) {
 export function nextGrandPrix(state) {
   const next = deepCopy(state), current = next.technical.weekend.round;
   next.technical.weekend = { round: (current + 1) % CIRCUITS_2026.length, phase: "factory", circuit: CIRCUITS_2026[(current + 1) % CIRCUITS_2026.length], practiceRuns: [], telemetry: null, qualifying: null };
+  next.calendar ||= {day:1,nextRaceDay:5,raceDue:false,label:"Segunda-feira"};
+  next.calendar.nextRaceDay = Math.max(next.calendar.day + 5, next.calendar.nextRaceDay + 7);
+  next.calendar.raceDue = false;
   return { ok: true, reason: `Logística preparada para ${next.technical.weekend.circuit.name}.`, state: finalize(next) };
 }
 
@@ -293,13 +304,10 @@ export function launchCampaign(state, investment) {
   return { ok: true, reason: `Campanha concluída: marca +${gain}.`, state: finalize(next) };
 }
 
-export function advanceWeek(state) {
-  const next = deepCopy(state);
-  if (next.status !== "employed") return { ok: false, reason: "Assine uma proposta para continuar.", state };
+function processWeek(next) {
   const weeklyPayroll = Math.round(payroll(next) / 52);
   const operating = Math.round(Object.values(next.budgets).reduce((sum, value) => sum + value, 0) / 52);
   const sponsorIncome = next.sponsorContracts.reduce((sum, contract) => sum + Math.round((contract.annualValue - contract.paymentsReceived) / Math.max(1, 52 - next.week)), 0);
-  next.week += 1;
   next.cash += sponsorIncome - weeklyPayroll - operating;
   next.costCap.spent += operating;
   next.costCap.committed = Math.max(0, next.costCap.committed - operating);
@@ -328,13 +336,52 @@ export function advanceWeek(state) {
   next.boardConfidence = clamp(next.boardConfidence + (event.confidence || 0) + (next.cash < 0 ? -6 : 0) - (budgetUsedPercent(next) > 92 ? 3 : 0));
   next.manager.reputation = clamp(next.manager.reputation + (event.reputation || 0));
   next.inbox.unshift({ id: `${event.id}-${next.week}`, week: next.week, title: event.title, text: event.text, read: false });
+  next.inbox[0].senderId = event.id==="evt-audit"?"helena":event.id==="evt-ops"?"diego":"samuel";
+  next.inbox[0].sector = event.id==="evt-audit"?"Finanças":event.id==="evt-ops"?"Mecânica":"Equipe";
   next.history.push({ week: next.week, type: "event", text: event.text });
   if (next.costCap.spent > next.costCap.limit) {
     next.boardConfidence = clamp(next.boardConfidence - 12);
     next.inbox.unshift({ id: `audit-${next.week}`, week: next.week, title: "Infração do teto", text: "Os custos incluídos superaram o limite do ruleset 2026.", read: false });
   }
-  if (next.boardConfidence <= 5 || next.cash < -8_000_000) dismissManager(next);
-  return { ok: true, reason: `Semana ${next.week} processada.`, state: finalize(next) };
+  const goalScore=Math.round(((next.cash>0?100:0)+Math.min(100,staffAverage(next)/75*100)+Math.min(100,sponsorAnnual(next)/20_000_000*100))/3);
+  next.contract ||= {warnings:0,objectiveScore:66,reviewWeek:13};
+  next.contract.objectiveScore=goalScore;
+  if(next.week%13===0){
+    const delta=goalScore>=70?4:goalScore<45?-10:-3;next.boardConfidence=clamp(next.boardConfidence+delta);
+    if(goalScore<45){next.contract.warnings++;next.inbox.unshift({id:`warning-${next.week}`,week:next.week,day:next.calendar?.day,senderId:"camila",sector:"Conselho",title:`Advertência contratual ${next.contract.warnings}/3`,text:`Metas em ${goalScore}%. O próximo ciclo precisa mostrar caixa, equipe e receita compatíveis com o contrato.`,read:false});}
+    next.contract.reviewWeek=next.week+13;
+  }
+  if([1,13,26,44].includes(next.week)&&next.manager.reputation>=48) generateCareerOffers(next);
+  if (next.boardConfidence <= 18 || next.cash < -8_000_000 || next.contract.warnings>=3) dismissManager(next);
+  return next;
+}
+
+function generateCareerOffers(next){
+  const currentKey=next.team.id.replace("team-2026-","");
+  next.careerOffers=Object.entries(TEAMS).filter(([key,team])=>key!==currentKey&&team.overall<=next.manager.reputation+32).sort((a,b)=>Math.abs(a[1].overall-next.team.overall)-Math.abs(b[1].overall-next.team.overall)).slice(0,3).map(([teamKey,team])=>({teamId:team.id,teamKey,teamName:team.name,confidence:clamp(50+Math.round((next.manager.reputation-team.overall)*.4)),autonomy:clamp(58+Math.round(next.manager.reputation*.22)),expiresWeek:next.week+4}));
+  if(next.careerOffers.length)next.inbox.unshift({id:`offers-${next.week}`,week:next.week,day:next.calendar?.day,senderId:"samuel",sector:"RH",title:"Propostas de carreira",text:`${next.careerOffers.length} equipe(s) solicitaram conversa. As propostas ficam disponíveis por quatro semanas.`,read:false});
+}
+
+export function advanceDay(state) {
+  const next=deepCopy(state);
+  if(next.status!=="employed")return {ok:false,reason:"Assine uma proposta para continuar.",state};
+  next.calendar||={day:Math.max(1,(next.week-1)*7+1),nextRaceDay:Math.max(5,(next.week-1)*7+5),raceDue:false,label:"Segunda-feira"};
+  if(next.calendar.raceDue&&!next.technical.weekend.raceResult)return {ok:true,reason:`O ${next.technical.weekend.circuit.grandPrix} está pronto. Entre no fim de semana.`,state:finalize(next),launchWeekend:true};
+  next.calendar.day+=1;
+  next.week=Math.floor((next.calendar.day-1)/7)+1;
+  next.calendar.label=["Segunda-feira","Terça-feira","Quarta-feira","Quinta-feira","Sexta-feira","Sábado","Domingo"][(next.calendar.day-1)%7];
+  if(next.calendar.day%7===1)processWeek(next);
+  if(next.calendar.day>=next.calendar.nextRaceDay&&!next.technical.weekend.raceResult){next.calendar.raceDue=true;next.technical.weekend.phase="race-weekend";next.inbox.unshift({id:`gp-${next.technical.weekend.round}-${next.calendar.day}`,week:next.week,day:next.calendar.day,senderId:"lara",sector:"Engenharia",title:"Fim de semana de corrida",text:`Box preparado para ${next.technical.weekend.circuit.grandPrix}. Treinos, classificação e corrida estão liberados.`,read:false});return {ok:true,reason:`Chegamos ao ${next.technical.weekend.circuit.grandPrix}.`,state:finalize(next),launchWeekend:true};}
+  const notices={2:["helena","Finanças","Fluxo de caixa atualizado","O fechamento diário confirma que folha e operação permanecem dentro do plano."],3:["marcos","Marketing","Ativações comerciais","Há oportunidades de ativação para os parceiros antes do próximo GP."],4:["mei","Clima","Previsão inicial","A previsão do fim de semana foi atualizada; confirme compostos quando a pista abrir."]};
+  const note=notices[next.calendar.day%7];if(note)next.inbox.unshift({id:`day-${next.calendar.day}`,week:next.week,day:next.calendar.day,senderId:note[0],sector:note[1],title:note[2],text:note[3],read:false});
+  return {ok:true,reason:`${next.calendar.label}, dia ${next.calendar.day}.`,state:finalize(next),launchWeekend:false};
+}
+
+export function advanceWeek(state) {
+  const next=deepCopy(state);
+  if(next.status!=="employed")return {ok:false,reason:"Assine uma proposta para continuar.",state};
+  next.week+=1;processWeek(next);
+  return {ok:true,reason:`Semana ${next.week} processada.`,state:finalize(next)};
 }
 
 function dismissManager(next) {
@@ -374,6 +421,13 @@ export function migrateSave(candidate) {
   candidate.technical.weekend.circuit = currentCircuit;
   candidate.technical.weekend.round = CIRCUITS_2026.findIndex(item => item.id === currentCircuit.id);
   candidate.trophies ||= [];
+  candidate.calendar ||= { day: Math.max(1,(candidate.week-1)*7+1), nextRaceDay: Math.max(5,(candidate.week-1)*7+5), raceDue: candidate.technical.weekend.phase==="race-weekend", label: "Segunda-feira" };
+  candidate.championship ||= { drivers: Object.fromEntries(DRIVERS_2026.filter(d=>d.teamId).map(d=>[d.id,{driverId:d.id,name:d.name,teamId:d.teamId,points:0,wins:0}])), constructors: Object.fromEntries(Object.keys(TEAMS).map(k=>[k,{teamId:k,name:TEAMS[k].name,points:0,wins:0}])), rounds: [] };
+  candidate.preferences ||= {fontScale:100,highContrast:false,reducedMotion:false};
+  candidate.tutorial ||= {active:false,step:0,completed:true};
+  candidate.contract ||= {warnings:0,objectiveScore:candidate.boardConfidence,reviewWeek:candidate.week+13};
+  candidate.careerOffers ||= [];
+  for(const message of candidate.inbox||[]){message.senderId||="vale";message.sector||="Equipe";message.day??=candidate.calendar.day;}
   if (!candidate.sponsorPipeline?.length || candidate.sponsorPipeline.some(item => /^spn-0/.test(item.id))) candidate.sponsorPipeline = deepCopy(SPONSORS);
   candidate.team.wikiTitle ||= Object.values(TEAMS).find(team => team.id === candidate.team.id)?.wikiTitle;
   for (const driver of candidate.team.drivers || []) driver.wikiTitle ||= driver.name.replaceAll(" ", "_");

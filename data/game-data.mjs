@@ -1,7 +1,7 @@
-export const GAME_VERSION = "3.0.0-p3";
-export const SCHEMA_VERSION = 3;
+export const GAME_VERSION = "4.0.0";
+export const SCHEMA_VERSION = 4;
 export const RULESET = {
-  id: "f1vge-rules-2026-p3",
+  id: "f1vge-rules-2026-p4",
   season: 2026,
   currency: "USD",
   costCap: 142_000_000,
@@ -42,6 +42,23 @@ const TEAM_META = {
   haas:["Haas","HAAS","Estados Unidos","#b6babd",68,"Haas_F1_Team"], audi:["Audi","AUDI","Alemanha","#e0002a",67,"Audi_in_Formula_One"], williams:["Williams","WILLIAMS","Reino Unido","#005aff",66,"Williams_Racing"],
   "aston-martin":["Aston Martin","ASTON MARTIN","Reino Unido","#006f62",63,"Aston_Martin_in_Formula_One"], cadillac:["Cadillac","CADILLAC","Estados Unidos","#c9a66b",61,"Cadillac_Formula_1_Team"],
 };
+export const TEAM_THEMES = {
+  mercedes:{primary:"#050607",accent:"#00d2be",contrast:"#f5f5f2"}, ferrari:{primary:"#8b0014",accent:"#ff1e38",contrast:"#ffffff"}, mclaren:{primary:"#8a3900",accent:"#ff8700",contrast:"#ffffff"},
+  "red-bull":{primary:"#111a46",accent:"#3671c6",contrast:"#ffffff"}, "racing-bulls":{primary:"#172b5e",accent:"#6692ff",contrast:"#ffffff"}, alpine:{primary:"#103e5d",accent:"#2293d1",contrast:"#ffffff"},
+  haas:{primary:"#4a1017",accent:"#c7c9cb",contrast:"#ffffff"}, audi:{primary:"#171719",accent:"#f50537",contrast:"#ffffff"}, williams:{primary:"#002b68",accent:"#64c4ff",contrast:"#ffffff"},
+  "aston-martin":{primary:"#004f46",accent:"#00a886",contrast:"#ffffff"}, cadillac:{primary:"#181818",accent:"#c9a66b",contrast:"#ffffff"},
+};
+
+export const SUPPORT_CHARACTERS = [
+  {id:"vale",name:"Vale",role:"Guia da carreira",sector:"Tutorial",sprite:0},
+  {id:"lara",name:"Lara Monteiro",role:"Engenheira de corrida",sector:"Engenharia",sprite:1},
+  {id:"diego",name:"Diego Ramos",role:"Chefe de mecânicos",sector:"Mecânica",sprite:2},
+  {id:"helena",name:"Helena Duarte",role:"Diretora financeira",sector:"Finanças",sprite:3},
+  {id:"marcos",name:"Marcos Vidal",role:"Diretor de marketing",sector:"Marketing",sprite:4},
+  {id:"camila",name:"Camila Torres",role:"Diretora esportiva",sector:"Direção esportiva",sprite:5},
+  {id:"samuel",name:"Samuel Costa",role:"Diretor de pessoas",sector:"RH",sprite:6},
+  {id:"mei",name:"Mei Nakamura",role:"Estrategista meteorológica",sector:"Clima",sprite:7},
+];
 const STAFF_NAMES = [["Helena Moretti","Rafael Costa","Bruna Nishimura","André Lima"],["Edward Mercer","Sara Bellini","Noah Williams","Maya Okafor"],["Camille Durand","Tobias Klein","Aisha Rahman","Marco Silva"]];
 function buildTeam([key,[name,shortName,nationality,color,overall,wikiTitle]], index) {
   const names=STAFF_NAMES[index%STAFF_NAMES.length], drivers=DRIVERS_2026.filter(driver=>driver.teamId===key);
@@ -96,7 +113,7 @@ export const CIRCUITS_2026 = [
   { id:"las-vegas", name:"Las Vegas Strip Circuit", grandPrix:"GP de Las Vegas", country:"Estados Unidos", flag:"🇺🇸", laps:50, aero:42, power:98, tyre:56, trackPath:"M110 370 L145 111 L328 92 L359 193 L717 151 L765 95 L892 128 L875 292 L778 327 L733 418 L490 395 L271 436 Z" },
   { id:"qatar", name:"Lusail International Circuit", grandPrix:"GP do Catar", country:"Catar", flag:"🇶🇦", laps:57, aero:83, power:73, tyre:86, trackPath:"M135 357 C88 241 161 116 286 92 C416 67 480 152 566 151 C658 150 731 80 831 139 C938 202 874 385 739 405 C628 422 551 354 461 405 C332 479 191 438 135 357 Z" },
   { id:"abu-dhabi", name:"Yas Marina Circuit", grandPrix:"GP de Abu Dhabi", country:"Emirados Árabes Unidos", flag:"🇦🇪", laps:58, aero:69, power:82, tyre:64, trackPath:"M116 351 L151 131 L331 92 L439 162 L579 109 L842 132 L897 236 L813 315 L846 404 L630 422 L519 371 L343 429 L216 399 Z" },
-];
+].map((c,index)=>({...c,round:index+1,lapSeconds:[80,92,90,90,74,72,75,66,87,107,76,71,81,92,103,94,95,95,78,71,95,83,85][index],pitLoss:[22,23,22,21,20,19,22,21,23,25,21,20,24,23,25,24,25,23,22,21,24,23,22][index]}));
 
 export const WEEKLY_EVENTS = [
   { id: "evt-ops", title: "Pressão operacional", text: "A sequência de trabalho elevou a fadiga do departamento de Operações.", morale: -1, confidence: -1, cash: 0 },
@@ -107,8 +124,8 @@ export const WEEKLY_EVENTS = [
 ];
 
 export const NAV_ITEMS = [
-  ["overview", "Visão geral"], ["people", "Pessoas"], ["contracts", "Contratos"],
+  ["overview", "Visão geral"], ["inbox", "Central de e-mails"], ["people", "Pessoas"], ["contracts", "Contratos"],
   ["sponsors", "Patrocínios"], ["finances", "Finanças"], ["board", "Conselho"],
   ["engineering", "Engenharia"], ["car", "Carro"], ["weekend", "Fim de semana"], ["telemetry", "Telemetria"],
-  ["career", "Carreira"], ["archive", "Arquivo visual"], ["roadmap", "4 Partes"],
+  ["championship", "Campeonato"], ["career", "Carreira"], ["settings", "Acessibilidade"], ["archive", "Arquivo visual"], ["roadmap", "4 Partes"],
 ];
