@@ -1,7 +1,7 @@
-export const GAME_VERSION = "4.0.0";
-export const SCHEMA_VERSION = 4;
+export const GAME_VERSION = "4.1.0";
+export const SCHEMA_VERSION = 5;
 export const RULESET = {
-  id: "f1vge-rules-2026-p4",
+  id: "f1vge-rules-2026-v4.1",
   season: 2026,
   currency: "USD",
   costCap: 142_000_000,
@@ -89,6 +89,7 @@ export const DEVELOPMENT_AREAS = [
   { id: "reliability", label: "Confiabilidade", stat: "reliability", baseCost: 1_900_000, duration: 2, image: "assets/media/hq-componentes-confiabilidade.webp" },
 ];
 
+const SPRINT_IDS_2026 = new Set(["china","miami","canada","great-britain","netherlands","singapore"]);
 export const CIRCUITS_2026 = [
   { id:"australia", name:"Albert Park", grandPrix:"GP da Austrália", country:"Austrália", flag:"🇦🇺", laps:58, aero:72, power:68, tyre:61, trackPath:"M148 328 C80 250 120 112 262 91 C378 72 421 157 514 140 C631 117 620 52 755 88 C887 123 930 235 842 318 C777 380 662 342 574 402 C464 477 288 454 200 388 Z" },
   { id:"china", name:"Shanghai International Circuit", grandPrix:"GP da China", country:"China", flag:"🇨🇳", laps:56, aero:65, power:76, tyre:70, trackPath:"M175 335 C81 270 94 130 210 91 C330 51 422 114 461 188 C503 267 583 259 631 177 C697 66 875 92 901 219 C922 322 837 405 732 391 C643 379 593 337 513 366 C382 415 273 408 175 335 Z" },
@@ -113,7 +114,7 @@ export const CIRCUITS_2026 = [
   { id:"las-vegas", name:"Las Vegas Strip Circuit", grandPrix:"GP de Las Vegas", country:"Estados Unidos", flag:"🇺🇸", laps:50, aero:42, power:98, tyre:56, trackPath:"M110 370 L145 111 L328 92 L359 193 L717 151 L765 95 L892 128 L875 292 L778 327 L733 418 L490 395 L271 436 Z" },
   { id:"qatar", name:"Lusail International Circuit", grandPrix:"GP do Catar", country:"Catar", flag:"🇶🇦", laps:57, aero:83, power:73, tyre:86, trackPath:"M135 357 C88 241 161 116 286 92 C416 67 480 152 566 151 C658 150 731 80 831 139 C938 202 874 385 739 405 C628 422 551 354 461 405 C332 479 191 438 135 357 Z" },
   { id:"abu-dhabi", name:"Yas Marina Circuit", grandPrix:"GP de Abu Dhabi", country:"Emirados Árabes Unidos", flag:"🇦🇪", laps:58, aero:69, power:82, tyre:64, trackPath:"M116 351 L151 131 L331 92 L439 162 L579 109 L842 132 L897 236 L813 315 L846 404 L630 422 L519 371 L343 429 L216 399 Z" },
-].map((c,index)=>({...c,round:index+1,lapSeconds:[80,92,90,90,74,72,75,66,87,107,76,71,81,92,103,94,95,95,78,71,95,83,85][index],pitLoss:[22,23,22,21,20,19,22,21,23,25,21,20,24,23,25,24,25,23,22,21,24,23,22][index]}));
+].map((c,index)=>({...c,round:index+1,sprint:SPRINT_IDS_2026.has(c.id),lapSeconds:[80,92,90,90,74,72,75,66,87,107,76,71,81,92,103,94,95,95,78,71,95,83,85][index],pitLoss:[22,23,22,21,20,19,22,21,23,25,21,20,24,23,25,24,25,23,22,21,24,23,22][index]}));
 
 export const WEEKLY_EVENTS = [
   { id: "evt-ops", title: "Pressão operacional", text: "A sequência de trabalho elevou a fadiga do departamento de Operações.", morale: -1, confidence: -1, cash: 0 },

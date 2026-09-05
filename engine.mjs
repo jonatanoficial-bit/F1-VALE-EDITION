@@ -69,6 +69,8 @@ export function createCareer(config) {
     preferences: { fontScale: 100, highContrast: false, reducedMotion: false },
     tutorial: { active: true, step: 0, completed: false },
     contract: { warnings: 0, objectiveScore: 66, reviewWeek: 13 },
+    simulation: { completedRaces: 0, completedSprints: 0, safetyCars: 0, virtualSafetyCars: 0, redFlags: 0, retirements: 0, penalties: 0 },
+    seasonSummary: null,
   };
 }
 
@@ -81,7 +83,7 @@ export function createTechnicalState(team) {
     projects: [],
     completedProjects: [],
     setup: { frontWing: 50, rearWing: 50, suspension: 50, brakeBalance: 55 },
-    weekend: { round: 0, phase: "factory", circuit: CIRCUITS_2026[0], practiceRuns: [], telemetry: null, qualifying: null },
+    weekend: { round: 0, phase: "factory", circuit: CIRCUITS_2026[0], practiceRuns: [], telemetry: null, qualifying: null, sprintResult: null, raceResult: null },
   };
 }
 
@@ -144,7 +146,13 @@ export function runQualifying(state) {
 
 export function nextGrandPrix(state) {
   const next = deepCopy(state), current = next.technical.weekend.round;
-  next.technical.weekend = { round: (current + 1) % CIRCUITS_2026.length, phase: "factory", circuit: CIRCUITS_2026[(current + 1) % CIRCUITS_2026.length], practiceRuns: [], telemetry: null, qualifying: null };
+  if(current>=CIRCUITS_2026.length-1){
+    const drivers=Object.values(next.championship.drivers).sort((a,b)=>b.points-a.points||b.wins-a.wins),constructors=Object.values(next.championship.constructors).sort((a,b)=>b.points-a.points||b.wins-a.wins);
+    next.seasonSummary={season:next.season,completed:true,driverChampion:drivers[0],constructorChampion:constructors[0],completedAt:new Date().toISOString()};
+    next.technical.weekend.phase="season-completed";next.calendar.raceDue=false;next.history.push({week:next.week,type:"season",text:`Temporada ${next.season} concluída: ${drivers[0]?.name||"—"} campeão e ${constructors[0]?.name||"—"} campeã de construtores.`});
+    return {ok:true,reason:`Temporada ${next.season} concluída.`,state:finalize(next),seasonComplete:true};
+  }
+  next.technical.weekend = { round: current + 1, phase: "factory", circuit: CIRCUITS_2026[current + 1], practiceRuns: [], telemetry: null, qualifying: null, sprintResult:null, raceResult:null };
   next.calendar ||= {day:1,nextRaceDay:5,raceDue:false,label:"Segunda-feira"};
   next.calendar.nextRaceDay = Math.max(next.calendar.day + 5, next.calendar.nextRaceDay + 7);
   next.calendar.raceDue = false;
@@ -153,8 +161,38 @@ export function nextGrandPrix(state) {
 
 export function selectCircuit(state, round) {
   const next = deepCopy(state), index = clamp(Math.round(Number(round) || 0), 0, CIRCUITS_2026.length - 1);
-  next.technical.weekend = { round: index, phase: "factory", circuit: CIRCUITS_2026[index], practiceRuns: [], telemetry: null, qualifying: null, raceResult: null };
+  next.technical.weekend = { round: index, phase: "factory", circuit: CIRCUITS_2026[index], practiceRuns: [], telemetry: null, qualifying: null, sprintResult: null, raceResult: null };
   return { ok: true, reason: `${CIRCUITS_2026[index].flag} ${CIRCUITS_2026[index].grandPrix} selecionado.`, state: finalize(next) };
+}
+
+const RACE_POINTS=[25,18,15,12,10,8,6,4,2,1],SPRINT_POINTS=[8,7,6,5,4,3,2,1];
+function ensureChampionship(next){
+  next.championship||={drivers:{},constructors:{},rounds:[]};
+  next.championship.drivers||={};next.championship.constructors||={};next.championship.rounds||=[];
+  for(const driver of DRIVERS_2026.filter(d=>d.teamId))next.championship.drivers[driver.id]||={driverId:driver.id,name:driver.name,teamId:driver.teamId,points:0,wins:0,sprintWins:0};
+  for(const [key,team] of Object.entries(TEAMS))next.championship.constructors[key]||={teamId:key,name:team.name,points:0,wins:0,sprintWins:0};
+}
+function scoreResults(next,results,points,sprint=false){
+  ensureChampionship(next);
+  results.forEach((row,index)=>{const pts=row.status==="DNF"?0:(points[index]||0),driver=next.championship.drivers[row.driverId]||={driverId:row.driverId,name:row.name,teamId:row.teamId,points:0,wins:0,sprintWins:0},team=next.championship.constructors[row.teamId]||={teamId:row.teamId,name:TEAMS[row.teamId]?.name||row.teamName||row.teamId,points:0,wins:0,sprintWins:0};driver.points+=pts;team.points+=pts;row.points=pts;if(index===0&&row.status!=="DNF"){if(sprint){driver.sprintWins=(driver.sprintWins||0)+1;team.sprintWins=(team.sprintWins||0)+1}else{driver.wins++;team.wins++}}});
+}
+export function recordSprintResult(state,rawResults,meta={}){
+  const next=deepCopy(state),weekend=next.technical.weekend;if(weekend.sprintResult)return{ok:false,reason:"A Sprint desta etapa já foi registrada.",state};
+  const results=deepCopy(rawResults);scoreResults(next,results,SPRINT_POINTS,true);weekend.sprintResult=results;next.simulation||={};next.simulation.completedSprints=(next.simulation.completedSprints||0)+1;
+  next.history.push({week:next.week,type:"sprint",text:`${results[0]?.name||"—"} venceu a Sprint de ${weekend.circuit.grandPrix}.`});
+  next.inbox.unshift({id:`sprint-${weekend.round}-${next.week}`,week:next.week,day:next.calendar?.day,senderId:"camila",sector:"Direção esportiva",title:"Resultado da Sprint",text:`${results[0]?.name||"—"} venceu. ${results.filter(r=>next.team.drivers.some(d=>d.id===r.driverId)).map(r=>`${r.name} P${r.position}`).join(" e ")}.`,read:false});
+  return{ok:true,reason:"Resultado da Sprint registrado.",state:finalize(next)};
+}
+export function recordRaceResult(state,rawResults,meta={}){
+  const next=deepCopy(state),weekend=next.technical.weekend;if(weekend.raceResult)return{ok:false,reason:"A corrida desta etapa já foi registrada.",state};
+  const results=deepCopy(rawResults);scoreResults(next,results,RACE_POINTS,false);weekend.raceResult=results;weekend.phase="completed";next.calendar.raceDue=false;next.simulation||={};next.simulation.completedRaces=(next.simulation.completedRaces||0)+1;
+  for(const key of ["safetyCars","virtualSafetyCars","redFlags","retirements","penalties"])next.simulation[key]=(next.simulation[key]||0)+(Number(meta[key])||0);
+  next.championship.rounds.push({round:weekend.round+1,circuitId:weekend.circuit.id,grandPrix:weekend.circuit.grandPrix,winner:results[0]?.name||"—",sprintWinner:weekend.sprintResult?.[0]?.name||null});
+  next.trophies.unshift({id:`trophy-${weekend.circuit.id}-${Date.now()}`,round:weekend.round+1,circuitId:weekend.circuit.id,grandPrix:weekend.circuit.grandPrix,country:weekend.circuit.country,flag:weekend.circuit.flag,winner:results[0]?.name||"—",podium:results.slice(0,3).map(r=>({name:r.name,team:r.teamName||TEAMS[r.teamId]?.name||r.teamId,flag:r.flag||"🏁"}))});
+  const teamResult=results.filter(r=>next.team.drivers.some(d=>d.id===r.driverId)),target=Math.max(3,Math.round(12-(next.team.overall-60)/4)),met=teamResult.some(r=>r.position<=target&&r.status!=="DNF");next.boardConfidence=clamp(next.boardConfidence+(met?3:-5));next.manager.reputation=clamp(next.manager.reputation+(met?2:-1));
+  next.inbox.unshift({id:`race-report-${weekend.circuit.id}-${next.week}`,week:next.week,day:next.calendar?.day,senderId:"camila",sector:"Direção esportiva",title:`Relatório: ${weekend.circuit.grandPrix}`,text:`Meta P${target}: ${met?"cumprida":"não cumprida"}. ${teamResult.map(r=>`${r.name} ${r.status==="DNF"?"DNF":`P${r.position}`}`).join(" e ")}. Conselho: ${next.boardConfidence}%.`,read:false});
+  next.history.push({week:next.week,type:"race",text:`${results[0]?.name||"—"} venceu ${weekend.circuit.grandPrix}; ${next.team.name}: ${teamResult.map(r=>r.status==="DNF"?`${r.name} DNF`:`${r.name} P${r.position}`).join(" e ")}.`});
+  return{ok:true,reason:`Corrida concluída: ${results[0]?.name||"—"} venceu.`,state:finalize(next)};
 }
 
 export function payroll(state) {
@@ -345,6 +383,7 @@ function processWeek(next) {
   }
   const goalScore=Math.round(((next.cash>0?100:0)+Math.min(100,staffAverage(next)/75*100)+Math.min(100,sponsorAnnual(next)/20_000_000*100))/3);
   next.contract ||= {warnings:0,objectiveScore:66,reviewWeek:13};
+  next.careerOffers=(next.careerOffers||[]).filter(offer=>!offer.expiresWeek||offer.expiresWeek>=next.week);
   next.contract.objectiveScore=goalScore;
   if(next.week%13===0){
     const delta=goalScore>=70?4:goalScore<45?-10:-3;next.boardConfidence=clamp(next.boardConfidence+delta);
@@ -394,7 +433,9 @@ export function acceptCareerOffer(state, teamKey) {
   const next = deepCopy(state);
   const team = TEAMS[teamKey];
   if (!team || !next.careerOffers.some(offer => offer.teamKey === teamKey)) return { ok: false, reason: "Proposta indisponível.", state };
-  next.team = deepCopy(team); next.cash = team.cash; next.boardConfidence = team.boardConfidence; next.status = "employed"; next.careerOffers = [];
+  const currentWeekend=deepCopy(next.technical.weekend),car=createTechnicalState(team).car;
+  next.team = deepCopy(team); next.cash = team.cash; next.boardConfidence = team.boardConfidence; next.status = "employed"; next.careerOffers = [];next.technical.car=car;next.technical.weekend=currentWeekend;next.contract={warnings:0,objectiveScore:team.boardConfidence,reviewWeek:next.week+13};
+  next.inbox.unshift({id:`new-team-${teamKey}-${next.week}`,week:next.week,day:next.calendar?.day,senderId:"vale",sector:"Tutorial",title:`Novo desafio: ${team.name}`,text:`Contrato assinado. O carro, pilotos e funcionários agora refletem a estrutura da ${team.name}; o campeonato e o calendário foram preservados.`,read:false});
   next.history.push({ week: next.week, type: "career", text: `${next.manager.name} assumiu ${team.name}.` });
   return { ok: true, reason: `Novo contrato assinado com ${team.name}.`, state: finalize(next) };
 }
@@ -427,6 +468,9 @@ export function migrateSave(candidate) {
   candidate.tutorial ||= {active:false,step:0,completed:true};
   candidate.contract ||= {warnings:0,objectiveScore:candidate.boardConfidence,reviewWeek:candidate.week+13};
   candidate.careerOffers ||= [];
+  candidate.simulation ||= {completedRaces:candidate.championship?.rounds?.length||0,completedSprints:0,safetyCars:0,virtualSafetyCars:0,redFlags:0,retirements:0,penalties:0};
+  candidate.seasonSummary ||= null;
+  candidate.technical.weekend.sprintResult ||= null;
   for(const message of candidate.inbox||[]){message.senderId||="vale";message.sector||="Equipe";message.day??=candidate.calendar.day;}
   if (!candidate.sponsorPipeline?.length || candidate.sponsorPipeline.some(item => /^spn-0/.test(item.id))) candidate.sponsorPipeline = deepCopy(SPONSORS);
   candidate.team.wikiTitle ||= Object.values(TEAMS).find(team => team.id === candidate.team.id)?.wikiTitle;

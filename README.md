@@ -35,19 +35,28 @@ Abra `http://localhost:8080` no navegador. O save é automático e fica no armaz
 - Arquivo visual com os 110 assets fornecidos, renomeados e otimizados.
 - Abertura em vídeo com áudio após o toque/clique inicial.
 - Orientação horizontal solicitada em celulares e tentativa de tela cheia/bloqueio de paisagem.
+- Botão de início reposicionado ao lado do logotipo em telas horizontais baixas, preservando acesso mesmo quando o navegador não aceita tela cheia.
 - P&D em aerodinâmica, chassi, unidade de potência e confiabilidade.
 - Capacidade da fábrica, custos, duração e ganhos persistidos dos projetos.
 - Calendário oficial 2026 com 23 etapas, bandeiras dos países e traçados 2D próprios.
 - TL1, TL2 e TL3 ao vivo, com envio e recolhimento dos dois pilotos e acerto durante a sessão.
 - Classificação completa em Q1, Q2 e Q3, eliminações e grid de 22 carros.
 - Corrida 2D ao vivo com classificação estilo TV e escalas 1×, 2×, 3×, 4× e 8× recalibradas.
+- Torre de tempos com bandeira/nacionalidade, diferença em segundos ou voltas, indicação de box e status DNF.
+- Direção de prova com bandeiras verde, amarela, vermelha, preta e branca e quadriculada, além de Safety Car e Virtual Safety Car.
+- Acidentes, falhas mecânicas, abandonos, limites de pista, investigações e penalidades com consequências esportivas.
 - Estratégia individual de ritmo, motor, composto, janela de box e pit stop manual.
+- Combustível, ERS, DRS, tráfego, temperatura e danos alteram o ritmo e a confiabilidade em tempo real.
 - Voltas em 1× próximas do tempo real de cada circuito e aceleração progressiva até 8×.
-- Parada obrigatória em prova seca, dois compostos, perda do pit lane e serviço conforme qualidade dos mecânicos.
+- Estratégias de uma, duas ou três paradas; parada obrigatória em prova seca e dois compostos.
+- Pit stop contabiliza entrada, serviço e saída, com perda diferente por circuito e serviço conforme equipe/mecânicos.
+- Seis fins de semana Sprint integrados, com classificação Sprint, prova curta, pontos próprios e continuidade para a classificação do GP.
+- Rádio da equipe e alertas de engenharia, clima, direção de prova e box durante a corrida.
 - Clima dinâmico, pista molhada, temperatura de pista/pneu, cinco compostos e decisões com efeito direto no ritmo.
 - Pódio com fotos oficiais, troféus persistidos e histórico do resultado.
 - Classificações acumuladas de pilotos e construtores.
 - Identidade visual por escuderia e opções de escala de texto, alto contraste e redução de animações.
+- Simulação automatizada de todas as 23 etapas valida temporada completa, seis Sprints, campeonato, troféus, save e migração.
 
 ## Assets oficiais
 
