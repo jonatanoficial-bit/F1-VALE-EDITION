@@ -1,4 +1,5 @@
 import { CIRCUITS_2026, DEVELOPMENT_AREAS, DRIVERS_2026, GAME_VERSION, ORIGINS, REVELATION_DRIVERS, RULESET, SCHEMA_VERSION, SPONSORS, STAFF_MARKET, SUPPORT_CHARACTERS, TEAMS, WEEKLY_EVENTS } from "./data/game-data.mjs";
+import { entryProfileById, logoById, liveryById, paletteById } from "./data/team-creator.mjs";
 
 export const clamp = (value, min = 0, max = 100) => Math.min(max, Math.max(min, value));
 export const deepCopy = value => JSON.parse(JSON.stringify(value));
@@ -20,8 +21,63 @@ export function seededRandom(seed) {
   return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
 }
 
+const text = (value, fallback, limit) => String(value || fallback).trim().replace(/\s+/g, " ").slice(0, limit) || fallback;
+const teamInitials = name => name.split(/\s+/).map(word => word[0]).join("").slice(0, 4).toUpperCase();
+
+export function createCustomTeam(config = {}) {
+  const palette = paletteById(config.customPalette);
+  const profile = entryProfileById(config.entryProfile);
+  const logo = logoById(config.customLogo);
+  const livery = liveryById(config.customLivery);
+  const name = text(config.customTeamName, "Velocity Grand Prix", 32);
+  const shortName = text(config.customShortName, teamInitials(name), 6).toUpperCase();
+  const driverOne = { id: "player-driver-01", name: "Yuki Tsunoda", wikiTitle: "Yuki_Tsunoda", role: "Piloto 1", rating: 74, overall: 74, potential: 82, pace: 74, feedback: 73, consistency: 72, marketing: 82, morale: 75, salary: 5_800_000, years: 2, assetId: "official-driver-portrait-driver-2026-23", official: true };
+  const driverTwo = { id: "player-driver-02", name: "Sofia Nakamura", role: "Piloto 2", rating: 70, overall: 70, potential: 88, pace: 70, feedback: 76, consistency: 69, marketing: 76, morale: 78, salary: 1_200_000, years: 2, assetId: null, official: false };
+  return {
+    id: "team-2026-player",
+    key: "player",
+    isCustom: true,
+    name,
+    shortName,
+    nationality: text(config.nationality, "Brasil", 24),
+    overall: profile.overall,
+    hq: `${name} · Base de operações`,
+    reputation: 56,
+    brand: 58,
+    cash: profile.cash,
+    boardConfidence: profile.boardConfidence,
+    color: palette.accent,
+    background: "assets/media/cinematica-047.webp",
+    logoAssetId: null,
+    customization: { paletteId: palette.id, primary: palette.primary, accent: palette.accent, contrast: palette.contrast, liveryId: livery.id, logoId: logo.id, logoMark: logo.mark, raceNumber: Math.max(1, Math.min(99, Number(config.raceNumber) || 27)), entryProfile: profile.id },
+    board: { owner: `${name} Holdings`, ambition: profile.id === "challenger" ? 84 : 73, patience: profile.id === "academy" ? 72 : 58, riskTolerance: profile.id === "challenger" ? 66 : 54 },
+    targets: [
+      { id: "finance", label: "Manter caixa positivo até a pausa de verão", target: 1 },
+      { id: "staff", label: "Elevar a média do staff técnico para 75", target: 75 },
+      { id: "sponsor", label: "Fechar US$ 16 mi em patrocínios", target: 16_000_000 },
+    ],
+    drivers: [driverOne, driverTwo],
+    staff: [
+      { id: "stf-player-01", name: "Lara Monteiro", role: "Diretora Técnica", department: "Técnica", rating: 76, potential: 85, salary: 1_600_000, years: 2, morale: 78, fatigue: 18, specialty: "Integração" },
+      { id: "stf-player-02", name: "Diego Ramos", role: "Chefe de Estratégia", department: "Corrida", rating: 75, potential: 82, salary: 1_280_000, years: 2, morale: 77, fatigue: 20, specialty: "Janelas de box" },
+      { id: "stf-player-03", name: "Marcos Vidal", role: "Diretor Comercial", department: "Comercial", rating: 74, potential: 80, salary: 1_020_000, years: 2, morale: 76, fatigue: 16, specialty: "Ativação" },
+      { id: "stf-player-04", name: "Ana Petrović", role: "Chefe de Operações", department: "Operações", rating: 76, potential: 83, salary: 1_230_000, years: 2, morale: 74, fatigue: 21, specialty: "Pit stop" },
+    ],
+  };
+}
+
+function createChampionship(team) {
+  const constructors = Object.fromEntries(Object.keys(TEAMS).map(key => [key, { teamId: key, name: TEAMS[key].name, points: 0, wins: 0 }]));
+  const drivers = Object.fromEntries(DRIVERS_2026.filter(driver => driver.teamId).map(driver => [driver.id, { driverId: driver.id, name: driver.name, teamId: driver.teamId, points: 0, wins: 0 }]));
+  if (team?.isCustom) {
+    constructors.player = { teamId: "player", name: team.name, points: 0, wins: 0 };
+    for (const driver of team.drivers) drivers[driver.id] = { driverId: driver.id, name: driver.name, teamId: "player", points: 0, wins: 0 };
+  }
+  return { drivers, constructors, rounds: [] };
+}
+
 export function createCareer(config) {
-  const team = deepCopy(TEAMS[config.teamId] || TEAMS.mercedes);
+  const team = config.careerMode === "custom" ? createCustomTeam(config) : deepCopy(TEAMS[config.teamId] || TEAMS.mercedes);
   const origin = ORIGINS[config.origin] || ORIGINS.estrategista;
   return {
     schemaVersion: SCHEMA_VERSION,
@@ -65,7 +121,7 @@ export function createCareer(config) {
     lastEvent: null,
     careerOffers: [],
     trophies: [],
-    championship: { drivers: Object.fromEntries(DRIVERS_2026.filter(d=>d.teamId).map(d=>[d.id,{driverId:d.id,name:d.name,teamId:d.teamId,points:0,wins:0}])), constructors: Object.fromEntries(Object.keys(TEAMS).map(k=>[k,{teamId:k,name:TEAMS[k].name,points:0,wins:0}])), rounds: [] },
+    championship: createChampionship(team),
     preferences: { fontScale: 100, highContrast: false, reducedMotion: false },
     tutorial: { active: true, step: 0, completed: false },
     contract: { warnings: 0, objectiveScore: 66, reviewWeek: 13 },
@@ -171,6 +227,10 @@ function ensureChampionship(next){
   next.championship.drivers||={};next.championship.constructors||={};next.championship.rounds||=[];
   for(const driver of DRIVERS_2026.filter(d=>d.teamId))next.championship.drivers[driver.id]||={driverId:driver.id,name:driver.name,teamId:driver.teamId,points:0,wins:0,sprintWins:0};
   for(const [key,team] of Object.entries(TEAMS))next.championship.constructors[key]||={teamId:key,name:team.name,points:0,wins:0,sprintWins:0};
+  if(next.team?.isCustom){
+    next.championship.constructors.player||={teamId:"player",name:next.team.name,points:0,wins:0,sprintWins:0};
+    for(const driver of next.team.drivers||[])next.championship.drivers[driver.id]||={driverId:driver.id,name:driver.name,teamId:"player",points:0,wins:0,sprintWins:0};
+  }
 }
 function scoreResults(next,results,points,sprint=false){
   ensureChampionship(next);
@@ -463,7 +523,7 @@ export function migrateSave(candidate) {
   candidate.technical.weekend.round = CIRCUITS_2026.findIndex(item => item.id === currentCircuit.id);
   candidate.trophies ||= [];
   candidate.calendar ||= { day: Math.max(1,(candidate.week-1)*7+1), nextRaceDay: Math.max(5,(candidate.week-1)*7+5), raceDue: candidate.technical.weekend.phase==="race-weekend", label: "Segunda-feira" };
-  candidate.championship ||= { drivers: Object.fromEntries(DRIVERS_2026.filter(d=>d.teamId).map(d=>[d.id,{driverId:d.id,name:d.name,teamId:d.teamId,points:0,wins:0}])), constructors: Object.fromEntries(Object.keys(TEAMS).map(k=>[k,{teamId:k,name:TEAMS[k].name,points:0,wins:0}])), rounds: [] };
+  candidate.championship ||= createChampionship(candidate.team);
   candidate.preferences ||= {fontScale:100,highContrast:false,reducedMotion:false};
   candidate.tutorial ||= {active:false,step:0,completed:true};
   candidate.contract ||= {warnings:0,objectiveScore:candidate.boardConfidence,reviewWeek:candidate.week+13};
@@ -473,7 +533,13 @@ export function migrateSave(candidate) {
   candidate.technical.weekend.sprintResult ||= null;
   for(const message of candidate.inbox||[]){message.senderId||="vale";message.sector||="Equipe";message.day??=candidate.calendar.day;}
   if (!candidate.sponsorPipeline?.length || candidate.sponsorPipeline.some(item => /^spn-0/.test(item.id))) candidate.sponsorPipeline = deepCopy(SPONSORS);
-  candidate.team.wikiTitle ||= Object.values(TEAMS).find(team => team.id === candidate.team.id)?.wikiTitle;
+  if(candidate.team?.isCustom){
+    const palette=paletteById(candidate.team.customization?.paletteId);
+    const livery=liveryById(candidate.team.customization?.liveryId);
+    const logo=logoById(candidate.team.customization?.logoId);
+    candidate.team.customization={paletteId:palette.id,primary:candidate.team.customization?.primary||palette.primary,accent:candidate.team.customization?.accent||palette.accent,contrast:candidate.team.customization?.contrast||palette.contrast,liveryId:livery.id,logoId:logo.id,logoMark:candidate.team.customization?.logoMark||logo.mark,raceNumber:Number(candidate.team.customization?.raceNumber)||27,entryProfile:candidate.team.customization?.entryProfile||"balanced"};
+    ensureChampionship(candidate);
+  }else candidate.team.wikiTitle ||= Object.values(TEAMS).find(team => team.id === candidate.team.id)?.wikiTitle;
   for (const driver of candidate.team.drivers || []) driver.wikiTitle ||= driver.name.replaceAll(" ", "_");
   for (const driver of candidate.driverMarket || []) if (driver.official) driver.wikiTitle ||= driver.name.replaceAll(" ", "_");
   candidate.schemaVersion = SCHEMA_VERSION;

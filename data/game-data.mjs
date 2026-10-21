@@ -1,7 +1,7 @@
-export const GAME_VERSION = "4.1.0";
-export const SCHEMA_VERSION = 5;
+export const GAME_VERSION = "5.0.0";
+export const SCHEMA_VERSION = 6;
 export const RULESET = {
-  id: "f1vge-rules-2026-v4.1",
+  id: "f1vge-rules-2026-v5.0",
   season: 2026,
   currency: "USD",
   costCap: 142_000_000,

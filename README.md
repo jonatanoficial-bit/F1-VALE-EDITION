@@ -2,6 +2,12 @@
 
 Versão completa das quatro macroentregas da Bíblia Mestra: gestão, engenharia, fim de semana, corrida 2D e carreira integrada.
 
+## Atualização V5 — Crie sua equipe
+
+Além de assumir uma escuderia existente, a nova carreira oferece a entrada **Criar minha equipe**. O construtor criado pelo jogador recebe nome, sigla, paleta, livery, emblema-base, número de corrida e perfil de investimento. Ele não é apenas cosmético: entra como o 12º construtor com dois carros no grid, orçamento, metas, staff, pilotos, campeonato, resultados e save persistente.
+
+Os emblemas-base e liveries desta versão são originais e parametrizados por código. Pacotes oficiais licenciados podem ser adicionados posteriormente sem modificar o formato do save; contratos e evidências de licença não devem ser publicados no repositório.
+
 ## Jogar localmente
 
 O jogo é um site estático. Sirva a pasta publicada com qualquer servidor HTTP:
@@ -21,8 +27,9 @@ Abra `http://localhost:8080` no navegador. O save é automático e fica no armaz
 
 ## O que está jogável
 
-- Criação de diretor e escolha entre as 11 equipes da temporada 2026.
-- 22 titulares oficiais, Yuki Tsunoda no mercado/reserva e revelações fictícias separadas.
+- Criação de diretor, escolha entre as 11 equipes da temporada 2026 ou criação do 12º construtor.
+- Identidade jogável da equipe criada: paleta, quatro pinturas 2D, seis emblemas-base, número e perfil de entrada persistentes.
+- 22 titulares oficiais; a equipe criada adiciona dois carros ao grid de 24 pilotos e adapta Q1/Q2/Q3 para o novo tamanho de grid.
 - Overall pesquisado e documentado, sem persistir pontos ou posição de campeonato.
 - Gestão de pilotos, staff, contratos, salários, rescisões, moral e fadiga.
 - Negociação de patrocínios, exclusividade, campanhas e valor de marca.
@@ -40,7 +47,7 @@ Abra `http://localhost:8080` no navegador. O save é automático e fica no armaz
 - Capacidade da fábrica, custos, duração e ganhos persistidos dos projetos.
 - Calendário oficial 2026 com 23 etapas, bandeiras dos países e traçados 2D próprios.
 - TL1, TL2 e TL3 ao vivo, com envio e recolhimento dos dois pilotos e acerto durante a sessão.
-- Classificação completa em Q1, Q2 e Q3, eliminações e grid de 22 carros.
+- Classificação completa em Q1, Q2 e Q3, eliminações e grid de 22 ou 24 carros conforme a carreira.
 - Corrida 2D ao vivo com classificação estilo TV e escalas 1×, 2×, 3×, 4× e 8× recalibradas.
 - Torre de tempos com bandeira/nacionalidade, diferença em segundos ou voltas, indicação de box e status DNF.
 - Direção de prova com bandeiras verde, amarela, vermelha, preta e branca e quadriculada, além de Safety Car e Virtual Safety Car.
@@ -56,6 +63,7 @@ Abra `http://localhost:8080` no navegador. O save é automático e fica no armaz
 - Pódio com fotos oficiais, troféus persistidos e histórico do resultado.
 - Classificações acumuladas de pilotos e construtores.
 - Identidade visual por escuderia e opções de escala de texto, alto contraste e redução de animações.
+- Controles principais com alvos de toque ampliados para telas móveis; interface de corrida preserva comandos compactos em paisagem baixa.
 - Simulação automatizada de todas as 23 etapas valida temporada completa, seis Sprints, campeonato, troféus, save e migração.
 
 ## Assets oficiais
