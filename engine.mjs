@@ -1,5 +1,5 @@
 import { CIRCUITS_2026, DEVELOPMENT_AREAS, DRIVERS_2026, GAME_VERSION, ORIGINS, REVELATION_DRIVERS, RULESET, SCHEMA_VERSION, SPONSORS, STAFF_MARKET, SUPPORT_CHARACTERS, TEAMS, WEEKLY_EVENTS } from "./data/game-data.mjs";
-import { entryProfileById, logoById, liveryById, paletteById } from "./data/team-creator.mjs";
+import { entryProfileById, foundingPackageById, logoById, liveryById, paletteById } from "./data/team-creator.mjs";
 
 export const clamp = (value, min = 0, max = 100) => Math.min(max, Math.max(min, value));
 export const deepCopy = value => JSON.parse(JSON.stringify(value));
@@ -50,6 +50,7 @@ export function createCustomTeam(config = {}) {
     background: "assets/media/cinematica-047.webp",
     logoAssetId: null,
     customization: { paletteId: palette.id, primary: palette.primary, accent: palette.accent, contrast: palette.contrast, liveryId: livery.id, logoId: logo.id, logoMark: logo.mark, raceNumber: Math.max(1, Math.min(99, Number(config.raceNumber) || 27)), entryProfile: profile.id },
+    foundingPlan: { status: "available", id: null, selectedWeek: null },
     board: { owner: `${name} Holdings`, ambition: profile.id === "challenger" ? 84 : 73, patience: profile.id === "academy" ? 72 : 58, riskTolerance: profile.id === "challenger" ? 66 : 54 },
     targets: [
       { id: "finance", label: "Manter caixa positivo até a pausa de verão", target: 1 },
@@ -378,6 +379,27 @@ export function signSponsor(state, sponsorId, offer) {
   return { ok: true, reason: `Contrato assinado. ${money(upfront)} entraram no caixa.`, state: finalize(next) };
 }
 
+export function selectFoundingPlan(state, packageId) {
+  const next = deepCopy(state);
+  const plan = foundingPackageById(packageId);
+  if (!next.team?.isCustom) return { ok: false, reason: "O plano inaugural é exclusivo para uma equipe criada pelo jogador.", state };
+  if (!plan) return { ok: false, reason: "Plano inaugural inválido.", state };
+  if (next.team.foundingPlan?.id) return { ok: false, reason: "O plano inaugural já foi definido para esta equipe.", state };
+  const sponsor = deepCopy(plan.sponsor);
+  const currentStat = Number(next.technical?.car?.[plan.stat]) || 0;
+  next.technical.car[plan.stat] = clamp(currentStat + plan.gain);
+  next.team.foundingPlan = { status: "active", id: plan.id, label: plan.label, stat: plan.stat, gain: plan.gain, selectedWeek: next.week };
+  next.sponsorContracts.push({ ...sponsor, years: 2, activation: 70, signedWeek: next.week, paymentsReceived: sponsor.upfront, foundingPartner: true });
+  next.cash += sponsor.upfront;
+  next.brand = clamp(next.brand + plan.brand);
+  next.boardConfidence = clamp(next.boardConfidence + plan.board);
+  next.team.overall = Math.round(average(Object.values(next.technical.car)));
+  next.financialLog.push({ week: next.week, category: `Parceiro fundador: ${sponsor.name}`, amount: sponsor.upfront, includedInCap: false });
+  next.history.push({ week: next.week, type: "founding-plan", text: `${plan.label} ativado: +${plan.gain} em ${plan.stat}; ${sponsor.name} entra como parceiro fundador.` });
+  next.inbox.unshift({ id: `founding-${plan.id}-${next.week}`, week: next.week, day: next.calendar?.day || 1, senderId: "marcos", sector: "Direção da equipe", title: "Plano inaugural ativado", text: `${plan.label} definido. ${sponsor.name} aportou ${money(sponsor.upfront)} e o carro recebeu +${plan.gain} em ${plan.stat}.` });
+  return { ok: true, reason: `${plan.label} ativo: ${sponsor.name} é o parceiro fundador.`, state: finalize(next) };
+}
+
 export function updateBudgets(state, budgets) {
   const next = deepCopy(state);
   const values = Object.fromEntries(Object.entries(budgets).map(([key, value]) => [key, Math.max(0, Number(value))]));
@@ -538,6 +560,7 @@ export function migrateSave(candidate) {
     const livery=liveryById(candidate.team.customization?.liveryId);
     const logo=logoById(candidate.team.customization?.logoId);
     candidate.team.customization={paletteId:palette.id,primary:candidate.team.customization?.primary||palette.primary,accent:candidate.team.customization?.accent||palette.accent,contrast:candidate.team.customization?.contrast||palette.contrast,liveryId:livery.id,logoId:logo.id,logoMark:candidate.team.customization?.logoMark||logo.mark,raceNumber:Number(candidate.team.customization?.raceNumber)||27,entryProfile:candidate.team.customization?.entryProfile||"balanced"};
+    candidate.team.foundingPlan ||= {status:"available",id:null,selectedWeek:null};
     ensureChampionship(candidate);
   }else candidate.team.wikiTitle ||= Object.values(TEAMS).find(team => team.id === candidate.team.id)?.wikiTitle;
   for (const driver of candidate.team.drivers || []) driver.wikiTitle ||= driver.name.replaceAll(" ", "_");

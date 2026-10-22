@@ -1,7 +1,7 @@
-export const GAME_VERSION = "5.0.0";
-export const SCHEMA_VERSION = 6;
+export const GAME_VERSION = "5.1.0";
+export const SCHEMA_VERSION = 7;
 export const RULESET = {
-  id: "f1vge-rules-2026-v5.0",
+  id: "f1vge-rules-2026-v5.1",
   season: 2026,
   currency: "USD",
   costCap: 142_000_000,
@@ -124,9 +124,11 @@ export const WEEKLY_EVENTS = [
   { id: "evt-quiet", title: "Semana estável", text: "Os departamentos executaram o plano sem desvios relevantes.", morale: 1, confidence: 0, cash: 0 },
 ];
 
-export const NAV_ITEMS = [
-  ["overview", "Visão geral"], ["inbox", "Central de e-mails"], ["people", "Pessoas"], ["contracts", "Contratos"],
-  ["sponsors", "Patrocínios"], ["finances", "Finanças"], ["board", "Conselho"],
-  ["engineering", "Engenharia"], ["car", "Carro"], ["weekend", "Fim de semana"], ["telemetry", "Telemetria"],
-  ["championship", "Campeonato"], ["career", "Carreira"], ["settings", "Acessibilidade"], ["archive", "Arquivo visual"], ["roadmap", "4 Partes"],
+export const NAV_GROUPS = [
+  { id: "command", label: "Comando", hint: "Hoje", items: [["overview", "Visão geral"], ["weekend", "Fim de semana"], ["inbox", "Central de e-mails"]] },
+  { id: "team", label: "Equipe", hint: "Garagem", items: [["people", "Pessoas"], ["contracts", "Contratos"], ["car", "Carro"], ["engineering", "Engenharia"]] },
+  { id: "business", label: "Negócios", hint: "Gestão", items: [["sponsors", "Patrocínios"], ["finances", "Finanças"], ["board", "Conselho"]] },
+  { id: "season", label: "Temporada", hint: "Pista", items: [["championship", "Campeonato"], ["telemetry", "Telemetria"], ["career", "Carreira"]] },
+  { id: "support", label: "Suporte", hint: "Mais", items: [["settings", "Acessibilidade"], ["archive", "Arquivo visual"], ["roadmap", "Evolução do jogo"]] },
 ];
+export const NAV_ITEMS = NAV_GROUPS.flatMap(group => group.items);

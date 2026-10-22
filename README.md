@@ -8,6 +8,15 @@ Além de assumir uma escuderia existente, a nova carreira oferece a entrada **Cr
 
 Os emblemas-base e liveries desta versão são originais e parametrizados por código. Pacotes oficiais licenciados podem ser adicionados posteriormente sem modificar o formato do save; contratos e evidências de licença não devem ser publicados no repositório.
 
+### Fases de melhoria
+
+1. **Base mobile e criação da equipe** — entregue: carreira customizada, 12º construtor, livery, save e grid de 24 carros.
+2. **Direção da equipe criada** — em entrega: projeto fundador, parceiro inicial, capital, marca e ganho técnico que afeta a corrida.
+3. **Pit wall de decisão** — aprofundar estratégia, Safety Car/VSC, recomendações explicáveis e consequências pós-corrida.
+4. **Carreira de longo prazo** — progressão de academia, mercado, P&D e patrocínios por temporada.
+5. **Qualidade mobile e acessibilidade** — testes de aparelhos reais, performance, telas seguras, contraste e navegação.
+6. **Preparação de lançamento** — pacote Steam, telemetria opt-in, conteúdo oficial licenciado, QA e requisitos de publicação em plataformas.
+
 ## Jogar localmente
 
 O jogo é um site estático. Sirva a pasta publicada com qualquer servidor HTTP:
